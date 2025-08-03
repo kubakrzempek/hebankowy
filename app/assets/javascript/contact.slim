@@ -1,0 +1,32 @@
+template
+  article.contact
+    h1.main-header Kontakt
+    form.contact-form submit.delegate="sendEmail()"
+      div.contact-form-group
+        input#name(
+          name="name"
+          type="text"
+          value.bind="contactForm.name"
+          required
+        )
+        label for="name" Twoje imię
+
+      div.contact-form-group
+        input#email(
+          class="${contactForm.email ? 'mod-non-empty' : ''}"
+          name="email"
+          type="email"
+          value.bind="contactForm.email"
+          required
+        )
+        label for="email" Twój email
+
+      div.contact-form-group
+        textarea#content(
+          name="content"
+          rows="8"
+          value.bind="contactForm.content"
+          required
+        )
+        label for="content" Twoja wiadomość
+      button.button.contact-form-submit type="submit" Wyślij

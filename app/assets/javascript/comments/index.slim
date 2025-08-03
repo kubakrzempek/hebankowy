@@ -1,0 +1,65 @@
+template
+  form.comments-new submit.delegate="create()" if.bind="postId"
+    header.comment-item-header
+      p
+        strong.comment-item-header-author> Twój komentarz:
+    section.comment-item-content
+      div.comment-item-content-arrow-up
+      textarea.comments-new-content(
+        rows="3"
+        value.bind="newComment.content"
+        placeholder="Co myślisz?"
+        required
+      )
+    .comments-new-author
+      p Aby zostawić komentarz podaj:
+      input(
+        type="text"
+        placeholder="imię"
+        value.bind="newComment.author_name"
+        required
+      )
+    button.button.comments-new-submit type="submit" Wyślij
+
+  article.comment-item repeat.for="comment of comments"
+    header.comment-item-header
+      p
+        strong.comment-item-header-author> ${comment.author_name}
+        time.comment-item-header-date datetime="comment.created_at"
+          |  ${formatDate(comment.created_at)}
+    section.comment-item-content
+      div.comment-item-content-arrow-up
+      p textcontent.bind="comment.content"
+      span.comment-item-content-reply click.trigger="showReplyForm(comment.id)" Odpowiedz
+    comments-index.comment-replies if.bind="postId" comments.bind="comment.replies" parent-id.bind="comment.id" replying.bind="comment.replying"
+  form.comments-new submit.delegate="create()" if.bind="parentId && replying"
+    header.comment-item-header
+      p
+        strong.comment-item-header-author> Twój komentarz:
+    section.comment-item-content
+      div.comment-item-content-arrow-up
+      textarea.comments-new-content(
+        rows="3"
+        value.bind="newComment.content"
+        placeholder="Co myślisz?"
+        required
+        autofocus
+      )
+    .comments-new-author
+      p Aby zostawić komentarz podaj:
+      input(
+        type="text"
+        placeholder="imię"
+        value.bind="newComment.author_name"
+        required
+      )
+      input(
+        type="email"
+        placeholder="email"
+        value.bind="newComment.author_email"
+        required
+      )
+    span.comments-new-email-disclaimer Twój adres e-mail nie zostanie opublikowany.
+    div.comments-new-reply-actions
+      span.comments-new-cancel click.trigger="cancelReplying()" Anuluj
+      button.button.comments-new-submit type="submit" Wyślij

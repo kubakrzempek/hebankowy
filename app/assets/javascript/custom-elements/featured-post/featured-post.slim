@@ -1,0 +1,17 @@
+template bindable="post"
+  img.featured-post-image.desktop src.bind="post.banner_photo_url"
+  img.featured-post-image.mobile src.bind="post.mobile_cover_photo_url"
+  div.featured-post-content
+    p.featured-post-content-tag Najnowszy spacer
+    h1.featured-post-content-title
+      a(
+        route-href="route: showPost; params.bind: { slug: post.slug }"
+        title="Link do ${post.title}"
+      )
+        | ${post.title}
+    a.button.content-read-on(
+      route-href="route: showPost; params.bind: { slug: post.slug }"
+      title="Czytaj dalej ${post.title}"
+    )
+      | Zobacz więcej
+      i.fa.fa-angle-right style="margin-left:.6em;"

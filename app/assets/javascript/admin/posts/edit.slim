@@ -1,0 +1,72 @@
+template
+  section.admin-posts-new
+    button.button click.delegate="togglePreview()"
+      | ${preview ? 'Wyłącz' : 'Włącz'} podgląd
+    form.admin-posts-new-form submit.delegate="savePost()"
+      div.admin-posts-new-form-item
+        label for="title" Tytuł
+        br
+        textarea#title rows="2" cols="100" name="title" value.bind="post.title"
+      div.admin-posts-new-form-item
+        label for="slug" Część URL
+        br
+        textarea#slug rows="2" cols="100" name="slug" value.bind="post.slug"
+      div.admin-posts-new-form-item
+        label for="teaser" Zapowiedź
+        br
+        textarea#teaser rows="3" cols="100" name="teaser" value.bind="post.teaser"
+      div.admin-posts-new-form-item if.bind="!preview"
+        label for="content" Treść
+        br
+        textarea#content rows="40" cols="100" name="content" value.bind="post.content"
+      div class="${post.new_version ? 'new-post' : ''}"
+        article class="${post.new_version ? 'post-body' : ''}" ref="previewNode" innerhtml.bind="post.content" contenteditable="true" if.bind="preview"
+      div.admin-posts-new-form-item
+        label for="hints" Praktycznik
+        br
+        textarea#hints rows="5" cols="100" name="hints" value.bind="post.hints"
+      div.admin-posts-new-form-item
+        label for="location" Lokalizacja
+        br
+        textarea#location rows="5" cols="100" name="location" value.bind="post.location"
+      div.admin-posts-new-form-item
+        label for="route" Trasa
+        br
+        textarea#route rows="5" cols="100" name="route" value.bind="post.route"
+      div.admin-posts-new-form-item
+        label for="distance" Odległość
+        br
+        input#distance type="number" name="distance" value.bind="post.distance"
+      div.admin-posts-new-form-item
+        label for="seoTitle" SEO - tytuł
+        br
+        textarea#seoTitle rows="2" cols="100" name="seoTitle" value.bind="post.seo.title"
+      div.admin-posts-new-form-item
+        label for="seoDescription" SEO - opis
+        br
+        textarea#seoDescription rows="2" cols="100" name="seoDescription" value.bind="post.seo.description"
+      div.admin-posts-new-form-item
+        label for="seoImage" SEO - foto
+        br
+        textarea#seoImage rows="2" cols="100" name="seoImage" value.bind="post.seo.image"
+      div.admin-posts-new-form-item
+        label for="bannerPhotoUrl" Zdjęcie bannerowe
+        br
+        textarea#bannerPhotoUrl rows="2" cols="100" name="bannerPhotoUrl" value.bind="post.banner_photo_url"
+      div.admin-posts-new-form-item
+        label for="coverPhotoUrl" Zdjęcie okładkowe
+        br
+        textarea#coverPhotoUrl rows="2" cols="100" name="coverPhotoUrl" value.bind="post.cover_photo_url"
+      div.admin-posts-new-form-item
+        label for="featuredPhotoUrl" Główne zdjęcie posta
+        br
+        textarea#featuredPhotoUrl rows="2" cols="100" name="featuredPhotoUrl" value.bind="post.featured_photo_url"
+      div.admin-posts-new-form-item
+        label for="mobileCoverPhotoUrl" Zdjęcie okładkowe (wersja mobilna)
+        br
+        textarea#mobileCoverPhotoUrl rows="2" cols="100" name="mobileCoverPhotoUrl" value.bind="post.mobile_cover_photo_url"
+      div.admin-posts-new-form-item
+        button.button type="submit" Zapisz
+        template if.bind="saving"
+          i.fa.fa-circle-o-notch.fa-spin.fa-fw<
+          span Zapisuję...

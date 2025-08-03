@@ -1,0 +1,39 @@
+template
+  article.articles-item
+    div.articles-item-photo
+      a(
+        route-href="route: showPost; params.bind: { slug: post.slug }"
+        title="Link do ${post.title}"
+      )
+        picture
+          source(
+            media="(min-width: 980px)"
+            srcset.bind="post.cover_photo_url"
+          )
+          img(
+            srcset.bind="post.mobile_cover_photo_url"
+            alt="Zdjęcie do ${post.title}"
+          )
+    div.articles-item-content
+      a.content-category-label(
+        route-href="route: showCategory; params.bind: { id: category.name }"
+        title.bind="category.name"
+      ) ${category.name}
+      h1.content-title
+        a(
+          route-href="route: showPost; params.bind: { slug: post.slug }"
+          title="Link do ${post.title}"
+        )
+          | ${post.title}
+      p.content-distance
+        | ${distance},
+        time< datetime.bind="post.published_at"
+          | ${formatDate(post.published_at)}
+      ul.content-teaser
+        li repeat.for="point of post.teaser" ${point}
+      a.button.content-read-on(
+        route-href="route: showPost; params.bind: { slug: post.slug }"
+        title="Czytaj dalej ${post.title}"
+      )
+        | Zobacz więcej
+        i.fa.fa-angle-right style="margin-left:.6em;"

@@ -1,0 +1,72 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    meta http-equiv="x-ua-compatible" content="ie=edge"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    title hebankowy.pl - blog o wycieczkach z psem
+    meta name="description" content="O tym, gdzie zabrać swojego psa na wycieczkę we Wrocławiu i na Dolnym Śląsku w ogóle. Przełamujemy rutynę jednego parku i ruszamy o krok dalej."
+    meta name="subject" content="hebankowy.pl, czyli aktywnie z psem we Wrocławiu"
+    meta property="og:url" content="http://hebankowy.pl/"
+    meta property="og:type" content="article"
+    meta property="og:title"  content="hebankowy.pl - blog o wycieczkach z psem | Wrocław"
+    meta property="og:description" content="O tym, gdzie zabrać swojego psa na wycieczkę we Wrocławiu i na Dolnym Śląsku w ogóle. Przełamujemy rutynę jednego parku i ruszamy o krok dalej."
+    meta property="og:image" content=""
+    base href="/"
+
+    javascript:
+      document.createElement("picture");
+
+    script async="true" src="/picturefill.min.js"
+
+    / GA
+    javascript:
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-78789173-1', 'auto');
+      ga('send', 'pageview');
+
+    / Inspectlet
+    javascript:
+      window.__insp = window.__insp || [];
+      __insp.push(['wid', 1043550564]);
+      (function() {
+      function ldinsp(){if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
+      setTimeout(ldinsp, 500); document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('onload', ldinsp) : window.addEventListener('load', ldinsp, false)) : ldinsp();
+      })();
+
+    / Facebook Pixel Code
+    javascript:
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1812154215696265');
+      fbq('track', 'PageView');
+    img height="1" width="1" src="https://www.facebook.com/tr?id=1812154215696265&ev=PageView&noscript=1"
+
+    / Hotjar tracking code
+    javascript:
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:328187,hjsv:5};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+
+  body(
+    aurelia-app="hebankowy"
+  )
+    script src="assets/jspm_packages/system.js"
+    script src="assets/config.js"
+    javascript:
+      System.import("aurelia-bootstrapper")

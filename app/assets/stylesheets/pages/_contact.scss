@@ -1,0 +1,79 @@
+$lightenMainFont: lighten($mainFontColor, 40%);
+
+article.contact {
+  background-color: $mainBackgroundColor;
+}
+
+form.contact-form {
+  display: flex;
+  flex-flow: column;
+  width: 50%;
+  margin: 0 auto;
+  padding: 1em;
+  @media #{$small, $medium} {
+    width: 100%;
+  }
+}
+
+.contact-form-group {
+  position: relative;
+  margin-bottom: 1.8em;
+  & > label {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: .3em;
+    width: 100%;
+    color: $lightenMainFont;
+    font-size: .85em;
+    transition: 0.2s;
+  }
+  & > textarea,
+  & > input {
+    background-color: $mainBackgroundColor;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    width: 100%;
+    padding-left: .3em;
+  }
+  & > input {
+    border-bottom: 1px solid $lightenMainFont;
+    &:focus + label,
+    &:valid + label,
+    &.mod-non-empty + label {
+      margin-top: -1.5em;
+      font-size: .6em;
+    }
+    &:focus + label {
+      color: $greenFontColor;
+    }
+  }
+  & > textarea {
+    border: 1px solid $lightenMainFont;
+    & ~ label {
+      padding-top: .3em;
+    }
+    &:focus ~ label,
+    &:valid ~ label {
+      margin-top: -1.8em;
+      font-size: .6em;
+    }
+    &:focus ~ label {
+      color: $greenFontColor;
+    }
+  }
+}
+
+button.contact-form-submit {
+  margin-bottom: 1.8em;
+  transform-origin: right;
+  align-self: flex-end;
+  border-color: $greenFontColor;
+  background-color: $greenFontColor;
+  &:hover {
+    background-color: transparent;
+    border-color: $greenFontColor;
+    color: $greenFontColor;
+  }
+}

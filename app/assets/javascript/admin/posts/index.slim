@@ -1,0 +1,36 @@
+template
+  div.admin-posts
+    button.button if.bind="!addingNew" click.trigger="addNew()" Dodaj post
+    section.admin-posts-new if.bind="addingNew"
+      form.admin-posts-new-form submit.delegate="createPost()"
+        div.admin-posts-new-form-item
+          label for="title" Tytuł
+          br
+          textarea#title rows="2" cols="100" name="title" value.bind="newPost.title"
+        div.admin-posts-new-form-item
+          label for="slug" Część URL
+          br
+          textarea#slug rows="2" cols="100" name="slug" value.bind="newPost.slug"
+        div.admin-posts-new-form-item
+          label for="teaser" Zapowiedź
+          br
+          textarea#teaser rows="3" cols="100" name="teaser" value.bind="newPost.teaser"
+        div.admin-posts-new-form-item
+          label for="content" Treść
+          br
+          textarea#content rows="40" cols="100" name="content" value.bind="newPost.content"
+        div.admin-posts-new-form-item
+          label for="hints" Praktycznik
+          br
+          textarea#hints rows="5" cols="100" name="hints" value.bind="newPost.hints"
+        div.admin-posts-new-form-item
+          label for="location" Lokalizacja
+          br
+          textarea#location rows="5" cols="100" name="location" value.bind="newPost.location"
+        div.admin-posts-new-form-item
+          button.button type="submit" Dodaj post
+    table.admin-posts-list
+      tr repeat.for="post of posts"
+        td ${post.title}
+        td
+          a route-href="route: editPost; params.bind: { id: post.id }" Edytuj

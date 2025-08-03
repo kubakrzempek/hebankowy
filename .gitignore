@@ -1,0 +1,13 @@
+coverage/
+dist/
+/log/*
+!/log/.keep
+/tmp/*
+/public/uploads/*
+/node_modules/*
+/jspm_packages/*
+/public/assets/*
+dragonfly.log
+*.rsa
+*.rsa.pub
+.env

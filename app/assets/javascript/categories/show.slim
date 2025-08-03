@@ -1,0 +1,6 @@
+template
+  require from="../components/post-tile"
+  div.articles
+    h1.articles-main-header ${category.name}
+    h1.articles-header.u-text-condensed Wizytownik miejsc:
+    post-tile repeat.for="post of category.posts" post.bind="post"

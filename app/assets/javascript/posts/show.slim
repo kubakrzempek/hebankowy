@@ -1,0 +1,40 @@
+template
+  require from="../comments/index"
+  require from="../custom-elements/banner/banner"
+  require from="../components/likes"
+  require from="../custom-elements/post-tile/post-tile"
+  img.preloader src.bind="post.featured_photo.url"
+  banner(
+    header.bind="post.title"
+    photo.bind="post.featured_photo_url"
+    mobile-photo.bind="post.mobile_cover_photo_url"
+    icon="/assets/images/${post.categories[0].name}-white.svg"
+    date.bind="post.published_at"
+    likes.bind="post.likes"
+    comments.bind="post.comments_count"
+    distance.bind="distance"
+  )
+  article class="${post.new_version ? 'new-post' : 'post'}"
+    h1.post-header Na miejscu:
+    section.post-body innerhtml="${ post.content | sanitizeHTML }"
+    section.post-likes
+      likes count.bind="post.likes" post-id.bind="post.id"
+    section.post-route if.bind="post.route"
+      h1.post-header Szlaki:
+      div.post-route-svg-container innerhtml="${ post.route | sanitizeHTML }"
+    section if.bind="post.hints"
+      h1.post-header Praktycznik:
+      div innerhtml="${post.hints | sanitizeHTML}"
+    section.post-map if.bind="post.location"
+      h1.post-header Lokalizacja:
+      div innerhtml="${ post.location | sanitizeHTML }"
+    h1.post-header Inne w tej kategorii:
+    section.post-similar if.bind="post.similar.length > 0"
+      a repeat.for="similarPost of post.similar" href.bind="similarPost.slug"
+        post-tile(
+          similar
+          post.bind="similarPost"
+        )
+    section.post-comments
+      h1.post-header Podziel się swoimi wrażeniami!
+      comments-index comments.bind="post.comments" post-id.bind="post.id"

@@ -1,0 +1,18 @@
+template
+  img.banner-image.desktop src.bind="photo"
+  img.banner-image.mobile src.bind="mobilePhoto"
+  div.banner-tile
+    div.banner-tile-inner
+      img.banner-tile-inner-icon src.bind="icon" if.bind="icon"
+      time.banner-tile-inner-date datetime="${date}" if.bind="date"
+        em ${formatDate(date)}
+      h1.banner-tile-inner-header textContent="${header}"
+      span.banner-tile-inner-distance if.bind="distance"
+        em ${distance}
+      div.banner-tile-inner-socials
+        span if.bind="likes != undefined"
+          i.fa.fa-heart-o
+          span< ${likes}
+        span if.bind="comments != undefined"
+          i.fa.fa-comment-o
+          span< ${comments}

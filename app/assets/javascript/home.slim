@@ -1,0 +1,19 @@
+template
+  require from="./components/post-tile"
+  require from="./custom-elements/featured-post/featured-post.html"
+  featured-post post.bind="featuredPost"
+  h1.articles-header.home-rest-tag.mobile Pozostałe wpisy
+  p.home-mobile-dropdown.mobile click.trigger="toggleFilters()"
+    | ${selectedCategoryName}
+    span ▼
+  ul.tabs.mod-collapsed
+    li.tabs-item.mod-selected data-category-id="0" click.trigger="clearFilter()" wszystkie
+    li.tabs-item(
+      repeat.for="category of categories"
+      click.trigger="filterPosts(category.id)"
+      data-category-id="${category.id}"
+    )
+      img.tabs-item-image src="/assets/images/${category.name}.svg"
+      | ${category.name}
+  div.articles
+    post-tile repeat.for="post of filteredPosts" post.bind="post"

@@ -1,0 +1,18 @@
+template
+  require from="font-awesome/css/font-awesome.min.css"
+  require from="./custom-elements/nav-bar/nav-bar"
+  require from="application.css"
+  div.container
+    header.global-header
+      div.global-header-logo
+        a route-href="route: home;"
+          img src="/assets/images/logo-with-text.svg"
+      div.global-header-navbar-collapse.fa.fa-bars click.delegate="toggleMobileMenu()"
+      nav-bar router.bind="router"
+    ul.global-header-categories
+      li.global-header-categories-item repeat.for="category of categories"
+        a.global-header-categories-item-link route-href="route: showCategory; params.bind: { id: category.name }"
+          img.global-header-categories-item-icon src="/assets/images/${category.name}.svg"
+          | ${category.name}
+    router-view.page-host
+    compose view="./footer.html" categories="categories" router="router"

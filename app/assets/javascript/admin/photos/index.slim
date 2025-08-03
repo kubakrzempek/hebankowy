@@ -1,0 +1,18 @@
+template
+  div.admin-photos
+    form.admin-photos-new-form name="newPhotoForm" submit.delegate="createPhoto()"
+      div.admin-photos-new-form-item
+        label for="title" Title
+        input#title type="text" name="title" value.bind="newPhoto.title"
+      div.admin-photos-new-form-item
+        input type="file" name="image" files.bind="newPhoto.image"
+      div.admin-photos-new-form-item
+        button.button type="submit" Dodaj zdjęcie
+    div.admin-photos-list
+      div.admin-photos-list-item repeat.for="photo of photos"
+        div.admin-photos-list-item-image
+          img src.bind="photo.url"
+        div.admin-photos-list-item-controls
+          p ${photo.title}
+          a.button route-href="route: showPhoto; params.bind: { id: photo.id }" Edytuj zdjęcie
+          button.button.mod-danger click.delegate="removePhoto(photo.id)" Usuń zdjęcie
