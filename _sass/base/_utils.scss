@@ -1,0 +1,17 @@
+.u-truncate-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.u-text-condensed {
+  transform: scaleX(0.8);
+  transform-origin: left;
+  letter-spacing: 0.01em;
+}
+
+@mixin u-text-condensed($scale, $origin: left) {
+  transform: scaleX($scale);
+  transform-origin: $origin;
+  letter-spacing: 0.01em;
+}

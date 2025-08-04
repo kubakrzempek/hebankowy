@@ -1,0 +1,53 @@
+title: "Hebankowy.pl"
+description: "Blog dla miłośników psów we Wrocławiu - archiwum"
+baseurl: ""
+url: "https://kubakrzempek.github.io/hebankowy"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+sass:
+  style: compressed
+  sass_dir: _sass
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Exclude files from processing
+exclude:
+  - app/
+  - build/
+  - config/
+  - db/
+  - tests/
+  - Gemfile.lock
+  - Rakefile
+  - Capfile
+  - config.ru
+  - gulpfile.js
+  - package.json
+  - node_modules/
+  - vendor/
+  - MIGRATION_PLAN.md

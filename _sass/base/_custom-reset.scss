@@ -1,0 +1,23 @@
+// Custom reset styles
+* {
+  box-sizing: border-box;
+}
+
+// Body
+body {
+  background-color: #F8F8F8;
+}
+
+// Links
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: 0;
+}
+
+// Lists
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

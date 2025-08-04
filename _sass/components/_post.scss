@@ -1,0 +1,31 @@
+// Post styles - will be developed when we add actual posts
+.post {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  
+  header {
+    margin-bottom: 2rem;
+    text-align: center;
+    
+    h1 {
+      color: $greenFontColor;
+      margin-bottom: 0.5rem;
+    }
+    
+    time {
+      color: $lightGray;
+      font-size: 0.9em;
+    }
+  }
+  
+  .content {
+    line-height: $baseLineHeight;
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 1rem 0;
+    }
+  }
+}
