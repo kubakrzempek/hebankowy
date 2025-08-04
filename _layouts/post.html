@@ -1,0 +1,65 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    <h1>{{ page.title }}</h1>
+    <div class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %B %Y" }}</time>
+      {% if page.categories %}
+        <div class="post-categories">
+          {% for category in page.categories %}
+            <span class="category">{{ category }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </header>
+
+  {% if page.featured_image %}
+    <div class="post-featured-image">
+      <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}">
+    </div>
+  {% endif %}
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {% if page.location or page.distance or page.route %}
+    <div class="post-details">
+      {% if page.location %}
+        <p><strong>Lokalizacja:</strong> {{ page.location }}</p>
+      {% endif %}
+      {% if page.distance %}
+        <p><strong>Dystans:</strong> {{ page.distance }} km</p>
+      {% endif %}
+      {% if page.route %}
+        <p><strong>Trasa:</strong> {{ page.route }}</p>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if page.likes %}
+    <div class="post-likes">
+      <p>❤️ {{ page.likes }} polubień</p>
+    </div>
+  {% endif %}
+
+  {% if page.comments and page.comments.size > 0 %}
+    <section class="comments-archive">
+      <h3>Komentarze (archiwalne)</h3>
+      {% for comment in page.comments %}
+        <div class="comment">
+          <div class="comment-header">
+            <strong>{{ comment.author }}</strong>
+            <time>{{ comment.date | date: "%d.%m.%Y" }}</time>
+          </div>
+          <div class="comment-content">
+            <p>{{ comment.content }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </section>
+  {% endif %}
+</article>
