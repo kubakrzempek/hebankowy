@@ -1,7 +1,7 @@
 title: "Hebankowy.pl"
 description: "Blog dla miłośników psów we Wrocławiu - archiwum"
-baseurl: ""
-url: "https://kubakrzempek.github.io/hebankowy"
+baseurl: "/hebankowy"
+url: "https://kubakrzempek.github.io"
 
 # Build settings
 markdown: kramdown
