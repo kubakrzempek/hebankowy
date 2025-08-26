@@ -1,383 +1,352 @@
-# Hebankowy.pl Static Archive Migration Plan
+# Hebankowy.pl Static Site Migration - TODO List
 
 ## Overview
-Convert the existing Ruby Sinatra + Aurelia blog to a static Jekyll archive hosted on GitHub Pages using an **iterative approach**:
+Convert the existing Ruby Sinatra + Aurelia SPA blog to a static Jekyll site hosted on GitHub Pages using an **iterative approach**:
 1. **Foundation first** - build site structure, templates, styling
-2. **Content second** - incrementally add posts one by one
+2. **Content migration** - convert all existing posts to static content
+3. **Remove dynamic features** - eliminate commenting, user interactions, and API dependencies
 
 ## Why Jekyll for This Project
 - **Native GitHub Pages support** - zero-config deployment
-- **Simple templating** - perfect for iterative development
-- **Stable and mature** - ideal for historical archives
-- **Immediate feedback** - see changes live with each commit
+- **Simple templating** - perfect for static content display
+- **Performance benefits** - faster loading, better SEO
+- **Maintenance-free** - no server management or security updates needed
+- **Cost effective** - free hosting on GitHub Pages
 
-## Iterative Migration Strategy
+## TODO Progress Tracker
 
-### Phase 1: Foundation (2-3 days)
-*Build core site structure and templates first*
+### 🚀 Phase 1: Foundation Setup (Days 1-2)
+**Goal**: Live site with navigation and basic styling
 
 #### 1.1 Jekyll Site Setup
-```bash
-# Create new Jekyll site
-jekyll new hebankowy-archive
-cd hebankowy-archive
-```
+- [x] Install Jekyll and dependencies (`gem install jekyll bundler`)
+- [x] Create new Jekyll site: `jekyll new hebankowy-archive`
+- [x] Initialize Git repository in the new project
+- [x] Configure `_config.yml` with basic site settings
 
-#### 1.2 Basic Structure
-```
-_layouts/
-├── default.html      # Main wrapper with nav/footer
-├── page.html         # For static pages like /o-nas
-└── post.html         # Post template (empty for now)
+#### 1.2 Directory Structure Creation
+- [x] Create `_layouts/` directory
+- [x] Create `_includes/` directory
+- [x] Create `_sass/base/` directory
+- [x] Create `_sass/components/` directory
+- [x] Create `pages/` directory
+- [x] Create `assets/css/` directory
+- [x] Create `assets/images/` directory
 
-_includes/
-├── navigation.html   # Top navigation
-└── footer.html       # Site footer
+#### 1.3 Basic Templates
+- [x] Create `_layouts/default.html` (main wrapper with nav/footer)
+- [x] Create `_layouts/page.html` (for static pages like /o-nas)
+- [x] Create `_layouts/post.html` (empty template for now)
+- [x] Create `_includes/navigation.html` (top navigation)
+- [x] Create `_includes/footer.html` (site footer)
 
-_sass/
-├── base/
-│   ├── _colors.scss     # Migrated from existing
-│   ├── _typography.scss # Migrated from existing  
-│   └── _utils.scss      # Migrated from existing
-└── components/
-    ├── _navigation.scss # Migrated nav-bar styles
-    └── _footer.scss     # Migrated footer styles
+#### 1.4 Styling Foundation
+- [x] Migrate `_colors.scss` from existing codebase
+- [x] Migrate `_typography.scss` from existing codebase
+- [x] Migrate `_utils.scss` from existing codebase
+- [x] Create `_navigation.scss` for nav styles
+- [x] Create `_footer.scss` for footer styles
+- [x] Create main `assets/css/main.scss` stylesheet
 
-pages/
-└── o-nas.md          # About page
+#### 1.5 About Page
+- [x] Create `pages/o-nas.md` (convert from existing about page)
+- [x] Add proper frontmatter and layout reference
+- [x] Migrate content from current `/o-nas` page
 
-assets/
-├── css/
-│   └── main.scss     # Main stylesheet
-└── images/
-    └── logo.svg      # Site logo
-```
+#### 1.6 Assets
+- [x] Copy logo.svg to `assets/images/`
+- [x] Copy any essential images for foundation
 
-#### 1.3 Deploy Foundation
-- Push to GitHub repository
-- Enable GitHub Pages
-- Verify navbar, footer, /o-nas page work
-- **Goal**: Live site with navigation and styling
+#### 1.7 Foundation Deployment
+- [ ] Push foundation to GitHub repository
+- [ ] Enable GitHub Pages in repository settings
+- [ ] Test live site deployment
+- [ ] Verify navbar displays correctly
+- [ ] Verify footer displays correctly
+- [ ] Verify `/o-nas` page works
+- [ ] Confirm basic styling is applied
 
-### Phase 2: Content Integration (ongoing)
-*Add posts incrementally, one by one*
+**✅ Foundation Complete When**: Live site with working navigation, footer, and about page
 
-#### 2.1 Create Post Template
-```html
-<!-- _layouts/post.html -->
----
-layout: default
----
-<article class="post">
-  <header>
-    <h1>{{ page.title }}</h1>
-    <time>{{ page.date | date: "%d %B %Y" }}</time>
-  </header>
-  <div class="content">
-    {{ content }}
-  </div>
-</article>
-```
+**✅ Foundation Complete When**: Live site with working navigation, footer, and about page
 
-#### 2.2 Single Post Download Script
-```ruby
-# download_post.rb <post-slug>
-# Downloads single post from API and creates markdown file
-require 'net/http'
-require 'json'
-
-def download_post(slug)
-  # Fetch from /api/posts/#{slug}
-  # Download associated images
-  # Create _posts/YYYY-MM-DD-slug.md with frontmatter
-end
-```
-
-#### 2.3 Iterative Process
-1. **Test with one post** - verify template works
-2. **Add posts gradually** - `ruby download_post.rb hiking-sudety`
-3. **Deploy frequently** - see changes live immediately
-4. **Refine as needed** - adjust templates based on real content
-
-## Implementation Steps
-
-### Step 1: Foundation Setup (Day 1)
-1. **Create Jekyll site structure**
-2. **Build navigation template** (convert from existing Aurelia nav-bar)
-3. **Build footer template** (convert from existing footer)
-4. **Create /o-nas page** (convert from existing about-us)
-5. **Migrate SCSS files** (from app/assets/stylesheets/)
-6. **Deploy to GitHub Pages**
-
-### Step 2: Content Templates (Day 2)  
-1. **Create post layout template**
-2. **Test with sample post**
-3. **Create download script for individual posts**
-
-### Step 3: Incremental Content (Ongoing)
-1. **Download posts one by one**: `ruby download_post.rb <slug>`
-2. **Commit and deploy frequently**
-3. **Refine templates as needed**
-
-## Jekyll Configuration
-```yaml
-# _config.yml
-title: "Hebankowy.pl"
-description: "Blog dla miłośników psów we Wrocławiu"
-baseurl: ""
-url: "https://USERNAME.github.io"
-
-markdown: kramdown
-highlighter: rouge
-plugins:
-  - jekyll-sitemap
-  - jekyll-seo-tag
-
-collections:
-  categories:
-    output: true
-    permalink: /categories/:name/
-
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  - scope:
-      path: ""
-      type: "categories"
-    values:
-      layout: "category"
-```
-
-### Phase 3: Template Migration (2-3 days)
-
-#### 3.1 Convert Aurelia Components
-
-**Navigation Component** (`_includes/navigation.html`):
-```html
-<nav class="navbar">
-  <div class="container">
-    <a href="/" class="logo">
-      <img src="/assets/images/logo.svg" alt="Hebankowy.pl">
-    </a>
-    <ul class="nav-links">
-      {% for category in site.data.categories %}
-        <li><a href="/categories/{{ category.slug }}/">{{ category.name }}</a></li>
-      {% endfor %}
-    </ul>
-  </div>
-</nav>
-```
-
-**Post Tile Component** (`_includes/post-tile.html`):
-```html
-<article class="post-tile">
-  <a href="{{ post.url }}">
-    {% if post.featured_image %}
-      <img src="{{ post.featured_image }}" alt="{{ post.title }}">
-    {% endif %}
-    <h3>{{ post.title }}</h3>
-    <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
-    <time>{{ post.date | date: "%d.%m.%Y" }}</time>
-  </a>
-</article>
-```
-
-**Post Layout** (`_layouts/post.html`):
-```html
----
-layout: default
----
-<article class="post">
-  <header>
-    <h1>{{ page.title }}</h1>
-    <time>{{ page.date | date: "%d %B %Y" }}</time>
-    {% if page.categories %}
-      <div class="categories">
-        {% for category in page.categories %}
-          <a href="/categories/{{ category | slugify }}/">{{ category }}</a>
-        {% endfor %}
-      </div>
-    {% endif %}
-  </header>
-
-  {% if page.featured_image %}
-    <img src="{{ page.featured_image }}" alt="{{ page.title }}" class="featured-image">
-  {% endif %}
-
-  <div class="content">
-    {{ content }}
-  </div>
-
-  {% if page.comments %}
-    <section class="comments-archive">
-      <h3>Komentarze (archiwalne)</h3>
-      {% for comment in page.comments %}
-        <div class="comment">
-          <strong>{{ comment.author }}</strong>
-          <time>{{ comment.date }}</time>
-          <p>{{ comment.content }}</p>
-        </div>
-      {% endfor %}
-    </section>
-  {% endif %}
-</article>
-```
-
-#### 3.2 SCSS Migration
-
-**Convert existing stylesheets** from `app/assets/stylesheets/` to Jekyll's `_sass/` directory:
-- Keep existing color scheme and typography
-- Adapt responsive breakpoints
-- Remove dynamic/interactive styles (likes, comment forms)
-- Optimize for static content display
-
-### Phase 4: Content Processing (1-2 days)
-
-#### 4.1 Post Format
-```markdown
----
-layout: post
-title: "Hiking in Sudety Mountains with Dogs"
-date: 2019-05-15
-categories: [góry]
-tags: [hiking, sudety, weekend]
-featured_image: /assets/images/posts/2019/sudety-cover.jpg
-excerpt: "Perfect weekend trip to Sudety mountains with our four-legged friends..."
-slug: hiking-sudety-mountains
-distance: 12.5
-route: "Szklarska Poręba - Śnieżka - Karpacz"
-location: "Karkonosze National Park"
-likes: 45
-comments:
-  - author: "Anna K."
-    date: 2019-05-16
-    content: "Świetne zdjęcia! Muszę tam pojechać z moim psem."
-  - author: "Tomek"
-    date: 2019-05-17
-    content: "Polecam też szlak na Śnieżkę przez Czarny Kocioł."
 ---
 
-Weekend in Sudety mountains was absolutely amazing. We decided to take our dogs...
+### 📝 Phase 2: Content Templates (Day 2-3)
+**Goal**: Working post template and content download system
 
-![Mountain view]({{ "/assets/images/posts/2019/sudety-mountain-view.jpg" | relative_url }})
+#### 2.1 Post Template Development
+- [ ] Create complete `_layouts/post.html` with:
+  - [ ] Post title and date display
+  - [ ] Category links
+  - [ ] Featured image support
+  - [ ] Content area
+  - [ ] Static comments display (read-only)
+- [ ] Create `_includes/post-tile.html` for post listings
+- [ ] Add post-specific SCSS styling
+- [ ] **Remove all interactive elements** (like buttons, comment forms)
 
-The trail from Szklarska Poręba to Śnieżka is perfect for dogs...
-```
+#### 2.2 Download Script Creation
+- [ ] Create `download_post.rb` script
+- [ ] Implement API connection to `/api/posts/{slug}`
+- [ ] Add image downloading functionality
+- [ ] Add markdown file generation with frontmatter
+- [ ] Add error handling and validation
+- [ ] Test script with sample post slug
 
-#### 4.2 Category Pages
-```markdown
+#### 2.3 Content Testing
+- [ ] Download one test post: `ruby download_post.rb <sample-slug>`
+- [ ] Verify post displays correctly on site
+- [ ] Check image links work properly
+- [ ] Test responsive design on mobile
+- [ ] Deploy test post and verify live site
+
+**✅ Content Templates Complete When**: One test post displays perfectly on live site
+
 ---
-layout: category
-title: "Góry"
-category: góry
-icon: /assets/images/categories/gory.svg
-description: "Wyprawy górskie z psami"
----
 
-Lista wszystkich wpisów z kategorii górskiej.
-```
+### 🎨 Phase 3: Template Migration (Days 3-5)
+**Goal**: Complete UI components migrated from Aurelia to Jekyll
 
-### Phase 5: Deployment (1 day)
+#### 3.1 Navigation Component Enhancement
+- [ ] Convert Aurelia nav-bar component to Jekyll
+- [ ] Implement dynamic category links using `site.data.categories`
+- [ ] Add responsive mobile navigation
+- [ ] Style navigation to match original design
+- [ ] Test navigation on all screen sizes
 
-#### 5.1 GitHub Repository Setup
-```bash
-# Create new repository: hebankowy-archive
-# Enable GitHub Pages in repository settings
-# Point custom domain hebankowy.pl to GitHub Pages
-```
+#### 3.2 Post Components
+- [ ] Enhance post-tile component with:
+  - [ ] Featured image handling
+  - [ ] Excerpt truncation
+  - [ ] Date formatting
+  - [ ] Category badges
+- [ ] Create post listing templates for homepage
+- [ ] Add pagination support if needed
 
-#### 5.2 DNS Configuration
-```
-CNAME record: hebankowy.pl -> USERNAME.github.io
-```
+#### 3.3 SCSS Migration
+- [ ] Migrate all base styles from `app/assets/stylesheets/`
+- [ ] Convert component styles:
+  - [ ] Post tile styles
+  - [ ] Post content styles
+  - [ ] Category page styles
+  - [ ] Navigation styles
+  - [ ] Footer styles
+- [ ] **Remove all dynamic/interactive styles** (likes, comment forms, buttons, API loading states)
+- [ ] **Remove JavaScript dependencies** and dynamic behaviors
+- [ ] Optimize for static content display only
+- [ ] Test responsive breakpoints
 
-#### 5.3 Automated Deployment
-GitHub Pages automatically builds and deploys Jekyll sites on every push to the main branch.
-
-## Technical Implementation Steps
-
-### Step 1: Export Script
-Create Ruby script to:
-1. Fetch all posts from `/api/posts`
-2. Download all images from `/uploads/` directory
-3. Convert API JSON to Jekyll markdown with frontmatter
-4. Organize files in Jekyll structure
-
-### Step 2: Template Creation
-1. Set up basic Jekyll site structure
-2. Create layout templates (default, post, category)
-3. Convert Aurelia components to Jekyll includes
-4. Migrate SCSS stylesheets
-
-### Step 3: Content Migration
-1. Run export script
-2. Process images (organize, optimize if needed)
-3. Generate category pages
-4. Create navigation data file
-
-### Step 4: Testing & Deployment
-1. Test locally with `bundle exec jekyll serve`
-2. Verify all internal links work
-3. Check responsive design
-4. Deploy to GitHub Pages
-
-## Migration Checklist
-
-### Pre-Migration
-- [ ] Backup current database
-- [ ] Download all uploaded images
-- [ ] Document current URL structure
-- [ ] Set up Jekyll development environment
-
-### Content Export
-- [ ] Export all published posts
-- [ ] Export categories and tags
-- [ ] Download and organize images
-- [ ] Convert comments to static data
-
-### Template Development
-- [ ] Create base layout template
-- [ ] Build navigation component
-- [ ] Design post layout
+#### 3.4 Category System
+- [ ] Create `_data/categories.yml` file
+- [ ] Create `_layouts/category.html` layout
 - [ ] Create category archive pages
-- [ ] Convert and optimize SCSS
+- [ ] Test category navigation and pages
 
-### Testing
-- [ ] Verify all posts display correctly
-- [ ] Test navigation and internal links
-- [ ] Check responsive design on mobile
-- [ ] Validate HTML and CSS
-- [ ] Test performance and loading times
+**✅ Template Migration Complete When**: All UI components work and match original design
 
-### Deployment
-- [ ] Set up GitHub repository
-- [ ] Configure GitHub Pages
-- [ ] Update DNS records
-- [ ] Set up custom domain
-- [ ] Monitor for broken links
+---
 
-## Expected Timeline
-- **Day 1-2**: Data export and Jekyll setup
-- **Day 3-5**: Template migration and styling
-- **Day 6-7**: Content processing and testing
-- **Day 8**: Deployment and DNS setup
+### 📊 Phase 4: Content Migration (Days 5-6)
+**Goal**: All existing content migrated to static format
 
-**Total: ~8 days** for complete migration
+#### 4.1 Export Script Enhancement
+- [ ] Create bulk export script for all existing posts
+- [ ] Add batch processing for multiple posts
+- [ ] Implement image organization by year/month
+- [ ] Add progress tracking and logging
+- [ ] Add validation for exported content
 
-## Risks & Mitigation
+#### 4.2 Data Processing
+- [ ] Export all published posts from current site/API
+- [ ] Download and organize all images
+- [ ] Convert existing comments to static display-only data
+- [ ] Generate category data file
+- [ ] Create tag index if needed
+- [ ] **Remove all user-generated content submission features**
+
+#### 4.3 Content Organization
+- [ ] Organize posts by date in `_posts/` directory
+- [ ] Create proper frontmatter for all posts:
+  - [ ] Title, date, categories, tags
+  - [ ] Featured images, excerpts
+  - [ ] Custom fields (distance, route, location)
+  - [ ] Static comments data (display only)
+- [ ] Organize images in logical directory structure
+- [ ] Create category pages for all categories
+- [ ] **Ensure no forms or interactive elements remain**
+
+#### 4.4 Static Conversion Verification
+- [ ] Run bulk export script
+- [ ] Verify all posts have proper frontmatter
+- [ ] Check all images downloaded correctly
+- [ ] Test random sample of posts on local site
+- [ ] Validate all internal links work
+- [ ] **Confirm no dynamic features remain**
+
+**✅ Content Migration Complete When**: All existing posts accessible locally as static content with no interactive features
+
+---
+
+### 🧪 Phase 5: Testing & Validation (Day 6-7)
+**Goal**: Thoroughly tested site ready for production
+
+#### 5.1 Content Validation
+- [ ] Test all posts display correctly
+- [ ] Verify all images load properly
+- [ ] Check all internal links work
+- [ ] Validate category pages show correct posts
+- [ ] Test post navigation (prev/next)
+
+#### 5.2 Technical Testing
+- [ ] Validate HTML markup
+- [ ] Test CSS styling across browsers
+- [ ] Check responsive design on multiple devices
+- [ ] Test site performance and loading times
+- [ ] Validate SEO meta tags
+
+#### 5.3 User Experience Testing
+- [ ] Test navigation flow
+- [ ] **Verify no interactive elements are present** (no comment forms, like buttons, etc.)
+- [ ] Check accessibility features
+- [ ] Test on slow connections
+- [ ] Validate mobile experience
+- [ ] **Confirm site works without JavaScript**
+
+#### 5.4 Pre-Launch Checks
+- [ ] Test local build: `bundle exec jekyll serve`
+- [ ] Fix any broken links or missing images
+- [ ] Optimize large images if needed
+- [ ] Test GitHub Pages build locally
+- [ ] Create final backup of original site
+
+**✅ Testing Complete When**: All content displays perfectly and site performs well
+
+---
+
+### 🚀 Phase 6: Production Deployment (Day 7-8)
+**Goal**: Live production site with custom domain
+
+#### 6.1 GitHub Repository Setup
+- [ ] Create new GitHub repository: `hebankowy-archive`
+- [ ] Push complete Jekyll site to repository
+- [ ] Configure repository settings for GitHub Pages
+- [ ] Enable GitHub Pages on main branch
+- [ ] Test GitHub Pages deployment
+
+#### 6.2 Domain Configuration
+- [ ] Configure DNS records for custom domain
+- [ ] Add CNAME record: `hebankowy.pl -> username.github.io`
+- [ ] Add custom domain in GitHub Pages settings
+- [ ] Test custom domain access
+- [ ] Verify HTTPS certificate
+
+#### 6.3 Production Monitoring
+- [ ] Monitor for broken links using tools
+- [ ] Check site performance on live domain
+- [ ] Verify all redirects work properly
+- [ ] Test from different geographic locations
+- [ ] Monitor DNS propagation
+
+#### 6.4 Launch Verification
+- [ ] Test all major user journeys
+- [ ] Verify SEO meta tags are working
+- [ ] Check sitemap.xml generation
+- [ ] Test social media sharing
+- [ ] Validate Google Analytics (if used)
+
+**✅ Deployment Complete When**: Live site accessible at hebankowy.pl with all content working
+
+---
+
+## 📋 Pre-Migration Preparation Checklist
+
+### Environment Setup
+- [ ] Install Ruby and Jekyll locally
+- [ ] Set up development environment
+- [ ] Test Jekyll installation with sample site
+- [ ] Install necessary gems and dependencies
+
+### Data Backup & Documentation
+- [ ] Backup current database completely
+- [ ] Document current URL structure
+- [ ] Create inventory of all uploaded images
+- [ ] Document current site functionality
+- [ ] Export current site analytics data
+
+### Access & Credentials
+- [ ] Ensure access to current site API
+- [ ] Verify GitHub account and permissions
+- [ ] Check domain registrar access
+- [ ] Document any third-party integrations
+
+---
+
+## 🎯 Success Criteria
+
+### Technical Requirements
+- ✅ All existing posts accessible and properly formatted as static content
+- ✅ Images display correctly and load efficiently
+- ✅ Navigation works and categories are browsable
+- ✅ Site loads quickly on GitHub Pages
+- ✅ Custom domain (hebankowy.pl) works correctly
+- ✅ Responsive design works on all devices
+- ✅ SEO meta tags and sitemaps generated automatically
+- ✅ **No dynamic features or user interactions remain**
+
+### Content Requirements
+- ✅ All posts maintain original formatting and content
+- ✅ Existing comments preserved as static display-only content
+- ✅ Categories and tags properly organized
+- ✅ Images optimized and properly linked
+- ✅ About page content migrated accurately
+- ✅ **No forms, comment submission, or user-generated content features**
+
+### Performance Requirements
+- ✅ Page load times under 3 seconds
+- ✅ Mobile-friendly design
+- ✅ SEO optimization maintained or improved
+- ✅ Accessibility standards met
+- ✅ **Works without JavaScript dependencies**
+
+---
+
+## ⚠️ Risk Mitigation
+
+### Potential Issues & Solutions
 - **Image size limits**: Use image optimization tools if needed
-- **URL structure changes**: Set up redirects in Jekyll
-- **Missing content**: Thorough testing of export script
-- **DNS propagation**: Plan deployment timing carefully
+- **URL structure changes**: Set up redirects in Jekyll or document changes
+- **Missing content**: Thorough testing of export script before bulk migration
+- **DNS propagation delays**: Plan deployment timing carefully
+- **Build failures**: Test GitHub Pages build process extensively
+- **Dynamic feature removal**: Ensure all interactive elements are properly removed without breaking layout
 
-## Success Criteria
-✅ All historical posts accessible and properly formatted  
-✅ Images display correctly and load efficiently  
-✅ Navigation works and categories are browsable  
-✅ Site loads quickly on GitHub Pages  
-✅ Custom domain (hebankowy.pl) works correctly  
-✅ Responsive design works on all devices  
-✅ SEO meta tags and sitemaps generated automatically
+### Rollback Plan
+- [ ] Keep original site running during migration
+- [ ] Document rollback procedures
+- [ ] Have DNS change reversal plan ready
+- [ ] Maintain backup of all original data
+
+---
+
+## 📅 Estimated Timeline
+
+**Total Duration**: 7-8 days
+
+- **Days 1-2**: Foundation Setup (Jekyll site, basic templates, initial deployment)
+- **Day 2-3**: Content Templates (post layouts, scripts for conversion, testing)
+- **Days 3-5**: Template Migration (UI components, styling, removing dynamic features)
+- **Days 5-6**: Content Migration (all existing posts, images, static conversion)
+- **Day 6-7**: Testing & Validation (comprehensive testing, static-only verification)
+- **Day 7-8**: Production Deployment (domain setup, final launch, monitoring)
+
+---
+
+## 💡 Notes
+
+- **Static-First Approach**: Remove all dynamic features and dependencies
+- **Content Preservation**: Maintain all existing content but make it read-only
+- **Performance Focus**: Optimize for fast static site performance
+- **No User Interactions**: Eliminate commenting, forms, and any user-generated content features
+- **Maintenance-Free**: Final site should require no ongoing server maintenance
+- **Documentation**: Keep detailed notes of removed features and any content changes
