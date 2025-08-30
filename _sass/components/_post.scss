@@ -2,26 +2,26 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  
+
   .post-header {
     margin-bottom: 2rem;
     text-align: center;
-    
+
     h1 {
       color: $greenFontColor;
       margin-bottom: 0.5rem;
     }
-    
+
     .post-meta {
       color: $lightGray;
       font-size: 0.9em;
       margin-bottom: 1rem;
-      
+
       time {
         display: block;
         margin-bottom: 0.5rem;
       }
-      
+
       .post-categories {
         .category {
           background-color: $backgroundLightBlue;
@@ -35,11 +35,11 @@
       }
     }
   }
-  
+
   .post-featured-image {
     margin-bottom: 2rem;
     text-align: center;
-    
+
     img {
       max-width: 100%;
       height: auto;
@@ -47,80 +47,216 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
   }
-  
+
   .post-content {
     line-height: $baseLineHeight;
     margin-bottom: 2rem;
-    
+
     img {
       max-width: 100%;
       height: auto;
       margin: 1rem 0;
       border-radius: 4px;
     }
-    
+
     p {
       margin-bottom: 1.2rem;
     }
   }
-  
+
   .post-details {
     background-color: $backgroundLightBlue;
     padding: 1rem;
     border-radius: 8px;
     margin-bottom: 2rem;
-    
+
     p {
       margin-bottom: 0.5rem;
       &:last-child { margin-bottom: 0; }
     }
-    
+
     strong {
       color: $greenFontColor;
     }
   }
-  
+
   .post-likes {
     text-align: center;
     margin-bottom: 2rem;
     color: $lightGray;
     font-size: 0.9em;
   }
-  
+
   .comments-archive {
     border-top: 2px solid $gainsboro;
     padding-top: 2rem;
-    
+
     h3 {
       color: $greenFontColor;
       margin-bottom: 1.5rem;
     }
-    
+
     .comment {
       background-color: #f9f9f9;
       padding: 1rem;
       margin-bottom: 1rem;
       border-radius: 8px;
       border-left: 4px solid $backgroundBlue;
-      
+
       .comment-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 0.5rem;
-        
+
         strong {
           color: $greenFontColor;
         }
-        
+
         time {
           color: $lightGray;
           font-size: 0.8em;
         }
       }
-      
+
       .comment-content p {
         margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Post tile styles for listings
+.post-tile {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 2rem;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  }
+
+  .post-tile-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .post-tile-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+
+  .post-tile-content {
+    padding: 1.5rem;
+  }
+
+  .post-tile-title {
+    color: $greenFontColor;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .post-tile-meta {
+    margin-bottom: 1rem;
+
+    time {
+      color: $lightGray;
+      font-size: 0.9em;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .post-tile-categories {
+      .category {
+        background-color: $backgroundLightBlue;
+        color: $greenFontColor;
+        padding: 0.2em 0.6em;
+        border-radius: 4px;
+        font-size: 0.75em;
+        margin: 0 0.3em 0.3em 0;
+        display: inline-block;
+        text-transform: lowercase;
+      }
+    }
+  }
+
+  .post-tile-excerpt {
+    color: $darkGray;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-size: 0.95em;
+  }
+
+  .post-tile-details {
+    .detail-item {
+      color: $lightGray;
+      font-size: 0.85em;
+      margin-right: 1rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// Post grid layout for listings
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+// Single column layout for list view
+.posts-list {
+  .post-tile {
+    display: flex;
+
+    .post-tile-image {
+      width: 200px;
+      height: 150px;
+      flex-shrink: 0;
+    }
+
+    .post-tile-content {
+      flex: 1;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+
+      .post-tile-image {
+        width: 100%;
+        height: 200px;
       }
     }
   }

@@ -1,0 +1,100 @@
+// Header styles based on original app.slim structure
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.global-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+
+  &-logo {
+    flex: 0 0 auto;
+
+    a {
+      display: block;
+
+      img {
+        height: 50px;
+        width: auto;
+      }
+    }
+  }
+
+  &-navbar-collapse {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: $mainFontColor;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+}
+
+.global-header-categories {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 20px 0;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #eee;
+
+  &-item {
+    margin: 0 15px 10px;
+
+    &-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: $mainFontColor;
+      font-weight: 500;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: $greenFontColor;
+        text-decoration: none;
+      }
+    }
+
+    &-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover &-icon {
+      transform: scale(1.1);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px 0;
+
+    &-item {
+      margin: 0 10px 15px;
+
+      &-icon {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+// Hide navigation on mobile (will be shown via mobile menu toggle)
+@media (max-width: 768px) {
+  .nav-bar {
+    display: none;
+  }
+}

@@ -76,30 +76,75 @@ Convert the existing Ruby Sinatra + Aurelia SPA blog to a static Jekyll site hos
 **Goal**: Working post template and content download system
 
 #### 2.1 Post Template Development
-- [ ] Create complete `_layouts/post.html` with:
-  - [ ] Post title and date display
-  - [ ] Category links
-  - [ ] Featured image support
-  - [ ] Content area
-  - [ ] Static comments display (read-only)
-- [ ] Create `_includes/post-tile.html` for post listings
-- [ ] Add post-specific SCSS styling
-- [ ] **Remove all interactive elements** (like buttons, comment forms)
+- [x] Create complete `_layouts/post.html` with:
+  - [x] Post title and date display
+  - [x] Category links
+  - [x] Featured image support
+  - [x] Content area
+  - [x] Static comments display (read-only)
+- [x] Create `_includes/post-tile.html` for post listings
+- [x] Add post-specific SCSS styling
+- [x] **Remove all interactive elements** (like buttons, comment forms)
 
 #### 2.2 Download Script Creation
-- [ ] Create `download_post.rb` script
-- [ ] Implement API connection to `/api/posts/{slug}`
-- [ ] Add image downloading functionality
-- [ ] Add markdown file generation with frontmatter
-- [ ] Add error handling and validation
-- [ ] Test script with sample post slug
+- [x] Create `download_post.rb` script
+- [x] Implement API connection to `/api/posts/{slug}`
+- [x] Add image downloading functionality
+- [x] Add markdown file generation with frontmatter
+- [x] Add error handling and validation
+- [x] Test script with sample post slug
+- [x] **CRITICAL FIX**: Preserve case-sensitive filenames for Linux compatibility
 
-#### 2.3 Content Testing
-- [ ] Download one test post: `ruby download_post.rb <sample-slug>`
-- [ ] Verify post displays correctly on site
-- [ ] Check image links work properly
-- [ ] Test responsive design on mobile
-- [ ] Deploy test post and verify live site
+#### 2.2.1 Individual Post Migration (40 posts total) - **ONE BY ONE ONLY**
+**⚠️ IMPORTANT: Posts MUST be migrated individually, one at a time. NO BULK IMPORTS.**
+**⚠️ IMPORTANT: ALL images must be downloaded and stored locally in the repository.**
+**⚠️ CRITICAL: Filenames must preserve original case for Linux compatibility.**
+
+- [x] las-zakrzowski-swietny-na-jesienny-spacer - Las Zakrzowski świetny na jesienny spacer (✅ Downloaded with all images, case-sensitive fixed)
+- [ ] jesienia-na-snieznik - Wczesną jesienią na Śnieżnik!
+- [ ] sciezka-hochbergow-czesc-2 - Wąwozem Pełcznicy ze starego do nowego zamku Książ
+- [ ] stary-ksiaz - Ścieżką wśród skałek do ruin zamku Stary Książ
+- [ ] park-przypalacowy-w-miliczu - Park przypałacowy w Miliczu z psem - dlaczego warto tu zajrzeć?
+- [ ] park-dla-psow-gorka-slowianska - Park dla psów na Górce Słowiańskiej
+- [ ] sciezka-pod-skalkami-2 - Ścieżka pod skałkami, czyli Ślęża inaczej (część 2.)
+- [ ] sciezka-pod-skalkami - Ścieżka pod skałkami, czyli Ślęża inaczej (część 1.)
+- [ ] park-w-bukowcu - Dlaczego warto przyjechać do parku w Bukowcu?
+- [ ] park-dla-psow-w-trzebnicy - Testujemy 4 Łapy - park dla psów w Trzebnicy
+- [ ] park-lesnicki-spacer-od-palacu-do-starego-debu - Park Leśnicki - spacer od pałacu do starego dębu
+- [ ] odkrywamy-z-psem-skalny-zamek-bolczow - Odkrywamy skalny zamek Bolczów w Rudawach Janowickich
+- [ ] zamek-w-swinach-z-psem - Zamek w Świnach, czyli pies w donżonie
+- [ ] sokoliki-w-rudawach-janowickich - W poszukiwaniu Sokolika w Rudawach Janowickich
+- [ ] spacer-wzdluz-czarnej-wiselki - Pies Heban węszy u źródeł Wisły - spacer wzdłuż Czarnej Wisełki
+- [ ] bukowy-las-w-trzebnicy - Bukowy Las w Trzebnicy
+- [ ] szybki-wypad-nad-odre-za-groble - Szybki, popołudniowy wypad nad Odrę za groblę
+- [ ] w-lesie-i-nad-rzeka-w-dolinie-baryczy - W lesie i nad rzeką w Dolinie Baryczy
+- [ ] miasteczko-katy-i-heban-piaty - Miasteczko Kąty i Heban piąty! Co słychać w deszczowych Kątach Wrocławskich
+- [ ] park-wschodni-wiosenny-park-na-wyspach - Park Wschodni - wiosenny park na wyspach
+- [ ] kraina-zielonych-kamieni-czyli-skalki-na-zboczu-slezy - Kraina zielonych kamieni, czyli skałki na zboczu Ślęży
+- [ ] park-szczytnicki-dwa-oczka-wodne-alpinarium-i-kubanska-knajpka - Park Szczytnicki - oczka wodne, alpinarium i kubańska knajpka
+- [ ] park-poludniowy-zimowy-spacer-z-psem - Park Południowy - zimowy spacer z psem
+- [ ] uraz-i-spacer-wzdluz-odry - Uraz i spacer wzdłuż Odry po zimowe słońce
+- [ ] tajemnicza-wieza-na-janskiej-gorze - Tajemnicza wieża na Jańskiej Górze
+- [ ] park-zachodni-zadumany-w-listopadzie - Park Zachodni zadumany w listopadzie
+- [ ] las-osobowicki-w-kierunku-cudownej-kapliczki - Las Osobowicki w kierunku cudownej kapliczki
+- [ ] park-skowroni-i-trzy-zabawy-z-psem - Park Skowroni i trzy zabawy z psem
+- [ ] wielka-kopa-przyjemny-spacer-po-gorach - Wielka Kopa - przyjemny spacer po górach
+- [ ] kolorowe-jeziorka-w-rudawach-janowickich - Kolorowe jeziorka w Rudawach Janowickich
+- [ ] borowkowa-gora-i-zaginiona-wies - Borówkowa góra i zaginiona wieś
+- [ ] psi-plac-zabaw-w-parku-grabiszynskim - Psi plac zabaw w Parku Grabiszyńskim
+- [ ] jak-pies-heban-wszedl-na-skrzyczne - Jak pies Heban wszedł na Skrzyczne
+- [ ] odkrywamy-park-we-wroclawskich-pawlowicach - Odkrywamy park we wrocławskich Pawłowicach
+- [ ] sulow-mala-wies-i-niespodziewany-wysyp-atrakcji - Sułów - mała wieś i niespodziewany wysyp atrakcji
+- [ ] w-poszukiwaniu-jeziora-bajkal - W poszukiwaniu jeziora Bajkał...
+- [ ] szymanow-szybowce-i-spadochroniarze-wsrod-pol - Szymanów - szybowce i spadochroniarze wśród pól
+- [ ] zamek-na-wodzie-i-piknik-w-wojnowicach - Zamek na wodzie i piknik w Wojnowicach
+- [ ] wuwa-nowatorska-architektura-przelomu-lat-20-i-30 - WuWA - nowatorska architektura przełomu lat '20 i '30
+- [ ] park-zlotnicki-parko-las-pelen-wiosny - Park Złotnicki parko-las pełen wiosny
+
+#### 2.3 Download and Convert Individual Posts
+
+#### Migration Progress
+- [x] las-zakrzowski-swietny-na-jesienny-spacer ✅
 
 **✅ Content Templates Complete When**: One test post displays perfectly on live site
 
@@ -148,41 +193,41 @@ Convert the existing Ruby Sinatra + Aurelia SPA blog to a static Jekyll site hos
 ---
 
 ### 📊 Phase 4: Content Migration (Days 5-6)
-**Goal**: All existing content migrated to static format
+**Goal**: All existing content migrated to static format **ONE BY ONE**
 
-#### 4.1 Export Script Enhancement
-- [ ] Create bulk export script for all existing posts
-- [ ] Add batch processing for multiple posts
-- [ ] Implement image organization by year/month
-- [ ] Add progress tracking and logging
-- [ ] Add validation for exported content
+#### 4.1 Individual Migration Process (**NO BULK OPERATIONS**)
+- [ ] ⚠️ **CRITICAL**: Complete all 40 posts from section 2.2.1 individually
+- [ ] ⚠️ **CRITICAL**: Download ALL images for each post locally
+- [ ] Verify each post displays correctly before moving to next
+- [ ] Test responsive design for each migrated post
+- [ ] Validate all image links work properly for each post
 
-#### 4.2 Data Processing
-- [ ] Export all published posts from current site/API
-- [ ] Download and organize all images
-- [ ] Convert existing comments to static display-only data
-- [ ] Generate category data file
-- [ ] Create tag index if needed
+#### 4.2 Data Processing (Individual Post Level)
+- [ ] ⚠️ **CRITICAL**: Export posts ONE AT A TIME using download script
+- [ ] ⚠️ **CRITICAL**: Download and organize ALL images for each post
+- [ ] Convert existing comments to static display-only data (per post)
+- [ ] Generate category data file after all posts are migrated
+- [ ] Create tag index if needed (after all posts are migrated)
 - [ ] **Remove all user-generated content submission features**
 
-#### 4.3 Content Organization
-- [ ] Organize posts by date in `_posts/` directory
-- [ ] Create proper frontmatter for all posts:
+#### 4.3 Content Organization (Post by Post)
+- [ ] ⚠️ **CRITICAL**: Organize posts by date in `_posts/` directory (done automatically by script)
+- [ ] ⚠️ **CRITICAL**: Verify proper frontmatter for ALL posts:
   - [ ] Title, date, categories, tags
   - [ ] Featured images, excerpts
   - [ ] Custom fields (distance, route, location)
   - [ ] Static comments data (display only)
-- [ ] Organize images in logical directory structure
-- [ ] Create category pages for all categories
+- [ ] ⚠️ **CRITICAL**: Verify images organized in `/assets/images/posts/YYYY/` structure
+- [ ] Create category pages for all categories (after all posts migrated)
 - [ ] **Ensure no forms or interactive elements remain**
 
-#### 4.4 Static Conversion Verification
-- [ ] Run bulk export script
-- [ ] Verify all posts have proper frontmatter
-- [ ] Check all images downloaded correctly
-- [ ] Test random sample of posts on local site
-- [ ] Validate all internal links work
-- [ ] **Confirm no dynamic features remain**
+#### 4.4 Static Conversion Verification (Individual Posts)
+- [ ] ⚠️ **CRITICAL**: Test each migrated post on local Jekyll site
+- [ ] ⚠️ **CRITICAL**: Verify ALL images load correctly for each post
+- [ ] ⚠️ **CRITICAL**: Check all internal links work for each post
+- [ ] Test random sample of posts on different devices
+- [ ] Validate all post URLs match expected Jekyll structure
+- [ ] **Confirm no dynamic features remain in any post**
 
 **✅ Content Migration Complete When**: All existing posts accessible locally as static content with no interactive features
 

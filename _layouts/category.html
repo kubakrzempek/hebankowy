@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<div class="page">
+  <header>
+    <h1 class="main-header">{{ page.title }}</h1>
+    {% if page.description %}
+      <p>{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  {% assign category_posts = site.posts | where: "categories", page.category %}
+
+  {% if category_posts.size > 0 %}
+    <div class="posts-grid">
+      {% for post in category_posts %}
+        {% include post-tile.html %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>Brak wpisów w tej kategorii.</p>
+  {% endif %}
+</div>

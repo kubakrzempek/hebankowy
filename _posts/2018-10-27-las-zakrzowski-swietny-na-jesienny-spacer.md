@@ -1,7 +1,6 @@
 ---
 layout: "post"
-title: "Las Zakrzowski
-świetny na jesienny spacer"
+title: "Las Zakrzowski świetny na jesienny spacer"
 date: "2018-10-27"
 categories:
   - lasy
@@ -15,8 +14,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvMXQ0bmVtaGFuNF9JTUdfNjA4My5qcGciXV0/IMG_6083.jpg?sha=10b4724054c9e3f3">
-      <img alt="Las Zakrzowski -&nbsp;pies Heban na ścieżce" src="/assets/images/posts/2018/IMG_6083.jpg?sha=ab93a9e027b56ff5">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6083.jpg' | relative_url }}">
+      <img alt="Las Zakrzowski -&nbsp;pies Heban na ścieżce" src="{{ '/assets/images/posts/2018/IMG_6083.jpg' | relative_url }}">
     </picture>
   </div>
   <div class="post-section-wrapper">
@@ -34,8 +33,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvODF2eGIybnRxOF9JTUdfNjE2Ny5qcGciXV0/IMG_6167.jpg?sha=de7ec0af0786447c">
-      <img srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvODF2eGIybnRxOF9JTUdfNjE2Ny5qcGciXSxbInAiLCJjb252ZXJ0IiwiLWNyb3AgMTcwNngxMjgwKzIxMSswIl1d/IMG_6167.jpg?sha=2a6702dabccde1f3" alt="Las Zakrzowski -&nbsp;pies Heban z&nbsp;wystawionym jęzorem na ścieżce">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6167.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6167.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;pies Heban z&nbsp;wystawionym jęzorem na ścieżce">
     </picture>
   </div>
   <div class="post-section-wrapper">
@@ -53,8 +52,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvNHF4cmRlMWN1N19JTUdfNjA5Ni5qcGciXV0/IMG_6096.jpg?sha=396704535e573f93">
-      <img srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvNHF4cmRlMWN1N19JTUdfNjA5Ni5qcGciXSxbInAiLCJjb252ZXJ0IiwiLWNyb3AgMTcwNngxMjgwKzIxMSswIl1d/IMG_6096.jpg?sha=e2e60b839f254666" alt="Las Zakrzowski -&nbsp;pomnik dąb Constantina i&nbsp;pies Heban">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6096.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6096.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;pomnik dąb Constantina i&nbsp;pies Heban">
     </picture>
   </div>
   <div class="post-section-wrapper">
@@ -71,8 +70,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvN2o4Ym44ejNzcV9JTUdfNjEzMS5qcGciXV0/IMG_6131.jpg?sha=292c61809668c69f">
-      <img srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvN2o4Ym44ejNzcV9JTUdfNjEzMS5qcGciXSxbInAiLCJjb252ZXJ0IiwiLWNyb3AgMTcwNngxMjgwKzIxMSswIl1d/IMG_6131.jpg?sha=21e509c2688b98bc" alt="Las Zakrzowski -&nbsp;jesienne drzewa">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6131.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6131.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;jesienne drzewa">
     </picture>
   </div>
   <div class="post-section-wrapper">
@@ -89,8 +88,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvNXhmamtnbnJlbl9JTUdfNjIwNi5qcGciXV0/IMG_6206.jpg?sha=a5c5d703240ea4de">
-      <img srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvNXhmamtnbnJlbl9JTUdfNjIwNi5qcGciXSxbInAiLCJjb252ZXJ0IiwiLWNyb3AgMTcwNngxMjgwKzEwNyswIl1d/IMG_6206.jpg?sha=fe8751c914e75f26" alt="Las Zakrzowski -&nbsp;trawy, linie transmisyjne i&nbsp;pies Heban">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6206.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6206.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;trawy, linie transmisyjne i&nbsp;pies Heban">
     </picture>
   </div>
   <div class="post-section-wrapper">
@@ -107,8 +106,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvM3JudXVla3N0el9JTUdfNjI2Ny5qcGciXV0/IMG_6267.jpg?sha=cef3f941a822e462">
-      <img srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvM3JudXVla3N0el9JTUdfNjI2Ny5qcGciXSxbInAiLCJjb252ZXJ0IiwiLWNyb3AgMTcwN3gxMjgwKzE0OSswIl1d/IMG_6267.jpg?sha=58845e2103b6147f" alt="Las Zakrzowski -&nbsp;widok na las z&nbsp;przejścia nad Łącznikiem Długołęka">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6267.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6267.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;widok na las z&nbsp;przejścia nad Łącznikiem Długołęka">
     </picture>
   </div>
   <div class="post-section-wrapper">
@@ -125,8 +124,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvMmQ2YTU3cmVhX0lNR182MzMwLmpwZyJdXQ/IMG_6330.jpg?sha=6dc6270c8831e4bb">
-      <img srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvMmQ2YTU3cmVhX0lNR182MzMwLmpwZyJdLFsicCIsImNvbnZlcnQiLCItY3JvcCAxNzA3eDEyODArMjQrMCJdXQ/IMG_6330.jpg?sha=dab0b4900988c0f9" alt="Las Zakrzowski -&nbsp;pies Heban biegnie z&nbsp;patykiem w&nbsp;pysku, w&nbsp;tle jesienna feria barw">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6330.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6330.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;pies Heban biegnie z&nbsp;patykiem w&nbsp;pysku, w&nbsp;tle jesienna feria barw">
     </picture>
   </div>
   <div class="post-section-wrapper">
@@ -138,8 +137,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvNWYydGFhOTc1cF9JTUdfNjM0MS5qcGciXV0/IMG_6341.jpg?sha=ac9f27f7d13d3982">
-      <img srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvNWYydGFhOTc1cF9JTUdfNjM0MS5qcGciXSxbInAiLCJjb252ZXJ0IiwiLWNyb3AgMTcwNngxMjgwKzMrMCJdXQ/IMG_6341.jpg?sha=e7f0b22b9af92b32" alt="Las Zakrzowski -&nbsp;pies Heban węszy wśród czerwonych liści">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6341.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6341.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;pies Heban węszy wśród czerwonych liści">
     </picture>
   </div>
   <div class="post-section-wrapper">
@@ -151,8 +150,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvMXk5andsaHFqcl9JTUdfNjM2OS5qcGciXV0/IMG_6369.jpg?sha=057df7a55d130f9e">
-      <img srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvMXk5andsaHFqcl9JTUdfNjM2OS5qcGciXSxbInAiLCJjb252ZXJ0IiwiLWNyb3AgMTcwNngxMjgwKzEwNyswIl1d/IMG_6369.jpg?sha=84f8da72b5a4e2b2" alt="Las Zakrzowski -&nbsp;pies Heban leży w&nbsp;liściach przy ścieżce">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6369.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6369.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;pies Heban leży w&nbsp;liściach przy ścieżce">
     </picture>
   </div>
   <div class="post-section-wrapper">
@@ -169,8 +168,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvNG1zN3h1eWdieF9JTUdfNjQxNi5qcGciXV0/IMG_6416.jpg?sha=8480afd001b360f5">
-      <img srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvNG1zN3h1eWdieF9JTUdfNjQxNi5qcGciXSxbInAiLCJjb252ZXJ0IiwiLWNyb3AgMTcwNngxMjgwKzEwNyswIl1d/IMG_6416.jpg?sha=11b89c97835a1006" alt="Las Zakrzowski -&nbsp;ulica Łosińska biegnie przez las">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6416.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6416.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;ulica Łosińska biegnie przez las">
     </picture>
   </div>
   <div class="post-section-wrapper">
@@ -187,8 +186,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvMTlxNGhvcnQ2NV9JTUdfNjM4OC5qcGciXV0/IMG_6388.jpg?sha=1c2d22446c97268d">
-      <img srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvMTlxNGhvcnQ2NV9JTUdfNjM4OC5qcGciXSxbInAiLCJjb252ZXJ0IiwiLWNyb3AgMTcwNngxMjgwKzEwNyswIl1d/IMG_6388.jpg?sha=98969362617c0f91" alt="Las Zakrzowski -&nbsp;krzaki w&nbsp;jesiennych barwach">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6388.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6388.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;krzaki w&nbsp;jesiennych barwach">
     </picture>
   </div>
   <div class="post-section-wrapper">
@@ -200,8 +199,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvOWJ2dWZzdWF3eF9JTUdfNjM3Ny5qcGciXV0/IMG_6377.jpg?sha=f8de186205350297">
-      <img srcset="/uploads/W1siZiIsIjIwMTgvMTAvMjcvOWJ2dWZzdWF3eF9JTUdfNjM3Ny5qcGciXSxbInAiLCJjb252ZXJ0IiwiLWNyb3AgMTcwNngxMjgwKzEwNyswIl1d/IMG_6377.jpg?sha=244785a6bce5de3a" alt="pies Heban -&nbsp;portret">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6377.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6377.jpg' | relative_url }}" alt="pies Heban -&nbsp;portret">
     </picture>
   </div>
   <div class="post-section-wrapper">

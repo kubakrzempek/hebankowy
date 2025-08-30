@@ -5,20 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  
+
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-  
+
   {% seo %}
   {% feed_meta %}
 </head>
 <body>
-  {% include navigation.html %}
-  
-  <main>
-    {{ content }}
-  </main>
-  
-  {% include footer.html %}
+  <div class="container">
+    <header class="global-header">
+      <div class="global-header-logo">
+        <a href="{{ '/' | relative_url }}">
+          <img src="{{ '/assets/images/logo-with-text.svg' | relative_url }}" alt="Hebankowy.pl">
+        </a>
+      </div>
+      <div class="global-header-navbar-collapse">
+        <i class="fa fa-bars"></i>
+      </div>
+      {% include navigation.html %}
+    </header>
+
+    <ul class="global-header-categories">
+      {% assign categories = "miasta,parki,zamki,pola,woda,góry,lasy" | split: "," %}
+      {% for category in categories %}
+        <li class="global-header-categories-item">
+          <a class="global-header-categories-item-link" href="{{ '/' | append: category | append: '/' | relative_url }}">
+            <img class="global-header-categories-item-icon" src="{{ '/assets/images/' | append: category | append: '.svg' | relative_url }}" alt="{{ category }}">
+            {{ category }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <main class="page-host">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+  </div>
 </body>
 </html>

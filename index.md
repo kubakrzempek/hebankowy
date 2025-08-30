@@ -10,6 +10,13 @@ title: "Hebankowy.pl - Blog dla miłośników psów we Wrocławiu"
 
 <section class="posts">
   <h2>Najnowsze wpisy</h2>
-  <!-- Posts will be added here when we implement them -->
-  <p>Wpisy będą dodawane w następnej fazie migracji.</p>
+  <div class="posts-grid">
+    {% for post in site.posts limit: 9 %}
+      {% include post-tile.html %}
+    {% endfor %}
+  </div>
+
+  <div class="view-all">
+    <a href="/archive/" class="btn">Zobacz wszystkie wpisy</a>
+  </div>
 </section>

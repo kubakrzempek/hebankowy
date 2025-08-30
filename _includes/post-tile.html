@@ -1,0 +1,41 @@
+<article class="post-tile"></article>
+  <a href="{{ post.url | relative_url }}" class="post-tile-link">
+    {% if post.featured_image %}
+      <div class="post-tile-image">
+        <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}">
+      </div>
+    {% endif %}
+
+    <div class="post-tile-content">
+      <h2 class="post-tile-title">{{ post.title }}</h2>
+
+      <div class="post-tile-meta">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B %Y" }}</time>
+        {% if post.categories %}
+          <div class="post-tile-categories">
+            {% for category in post.categories %}
+              <span class="category">{{ category }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      {% if post.excerpt %}
+        <div class="post-tile-excerpt">
+          {{ post.excerpt | strip_html | truncatewords: 30 }}
+        </div>
+      {% endif %}
+
+      {% if post.location or post.distance %}
+        <div class="post-tile-details">
+          {% if post.location %}
+            <span class="detail-item">📍 {{ post.location }}</span>
+          {% endif %}
+          {% if post.distance %}
+            <span class="detail-item">🚶 {{ post.distance }} km</span>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </a>
+</article>
