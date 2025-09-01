@@ -1,0 +1,35 @@
+<div class="banner">
+  <img class="banner-image desktop" src="{{ page.banner_photo_url | relative_url }}" alt="{{ page.title }}">
+  <img class="banner-image mobile" src="{{ page.mobile_cover_photo_url | relative_url }}" alt="{{ page.title }}">
+
+  <div class="banner-tile">
+    <div class="banner-tile-inner">
+      <img class="banner-tile-inner-icon" src="/assets/images/{{ page.categories[0] }}-white.svg" alt="{{ page.categories[0] }}">
+
+      <time class="banner-tile-inner-date" datetime="{{ page.date | date_to_xmlschema }}">
+        <em>{{ page.date | date: "%-d %B '%y" }}</em>
+      </time>
+
+      <h1 class="banner-tile-inner-header">{{ page.title }}</h1>
+
+      <span class="banner-tile-inner-distance">
+        <em>
+          {% if page.distance > 30 %}
+            {{ page.distance }} km od Wrocławia
+          {% elsif page.distance > 20 %}
+            okolice Wrocławia
+          {% else %}
+            we Wrocławiu
+          {% endif %}
+        </em>
+      </span>
+
+      <div class="banner-tile-inner-socials">
+        <span>
+          <i class="fas fa-heart"></i>
+          <span>{{ page.likes }}</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

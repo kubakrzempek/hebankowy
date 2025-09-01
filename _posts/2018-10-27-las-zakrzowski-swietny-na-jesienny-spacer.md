@@ -1,20 +1,45 @@
 ---
 layout: "post"
-title: "Las Zakrzowski świetny na jesienny spacer"
+title: |
+    Las Zakrzowski
+    świetny na jesienny spacer
 date: "2018-10-27"
 categories:
-  - lasy
+  - "lasy"
 slug: "las-zakrzowski-swietny-na-jesienny-spacer"
-featured_image: 
-location: "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80263.3953702659!2d17.008145749585736!3d51.12411405400595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDEwJzE4LjciTiAxN8KwMDcnMTYuMCJF!5e0!3m2!1spl!2spl!4v1540646220601\"></iframe>"
+featured_photo_url: "/assets/images/posts/2018/IMG_6330_featured.jpg"
+banner_photo_url: "/assets/images/posts/2018/IMG_6330_banner.jpg"
+cover_photo_url: "/assets/images/posts/2018/IMG_6330_cover.jpg"
+mobile_cover_photo_url: "/assets/images/posts/2018/IMG_6330_mobile_cover.jpg"
 distance: 0
 likes: 21
+teaser: "dąb-pomnik |  różnorodna trasa | jesienna feria barw"
+hints: |
+    <ul class="post-hints-list">
+      <li class="post-hints-list-item mod-tram">dojazd komunikacją miejską<br><a href="//jakdojade.pl?tn=Las+Zakrzowski&td=&tc=51.171838:17.121070&cid=2000" target="_blank">sprawdź na jakdojadę.pl</a></li>
+      <li class="post-hints-list-item mod-parking">miejsce parkingowe naprzeciwko domku myśliwskiego przy ul. Widawskiej (wejście na szlak), przy parku w Pawłowicach lub przy ul. Łosińskiej po drugiej stronie lasu</li>
+      <li class="post-hints-list-item mod-route">przez las biegnie żółty szlak</li>
+      <li class="post-hints-list-item mod-wild-life">uwaga na dzikie zwierzęta</li>
+      <li class="post-hints-list-item mod-horse">na ścieżkach w lesie można się natknąć na konie (i jeźdźców :))</li>
+      <li class="post-hints-list-item mod-road">zbliżając się do ulicy Łosińskiej uwaga na szybko jadące samochody</li>
+      <li class="post-hints-list-item mod-road">na trasie przejście nad ruchliwą drogą</li>
+    </ul>
+location: |
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80263.3953702659!2d17.008145749585736!3d51.12411405400595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDEwJzE4LjciTiAxN8KwMDcnMTYuMCJF!5e0!3m2!1spl!2spl!4v1540646220601"></iframe>
+seo_title: "Spacer z psem po Lesie Zakrzowskim we Wrocławiu"
+seo_description: "Podążamy żółtym szlakiem przez Las Zakrzowski. Niewątpliwie warto tu zajrzeć, zwłaszcza jesienią - zobaczcie dlaczego!"
+seo_image: "/assets/images/posts/2018/IMG_6330_seo.jpg"
+created_at: |
+    2018-10-27 06:49:48 UTC
+updated_at: |
+    2022-06-04 22:15:14 UTC
+published_at: "2018-10-27"
 ---
 
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6083.jpg' | relative_url }}">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6083_980px.jpg' | relative_url }}">
       <img alt="Las Zakrzowski -&nbsp;pies Heban na ścieżce" src="{{ '/assets/images/posts/2018/IMG_6083.jpg' | relative_url }}">
     </picture>
   </div>
@@ -33,8 +58,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6167.jpg' | relative_url }}">
-      <img srcset="{{ '/assets/images/posts/2018/IMG_6167.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;pies Heban z&nbsp;wystawionym jęzorem na ścieżce">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6167_980px.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6167_cropped.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;pies Heban z&nbsp;wystawionym jęzorem na ścieżce">
     </picture>
   </div>
   <div class="post-section-wrapper">
@@ -52,8 +77,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6096.jpg' | relative_url }}">
-      <img srcset="{{ '/assets/images/posts/2018/IMG_6096.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;pomnik dąb Constantina i&nbsp;pies Heban">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6096_980px.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6096_cropped.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;pomnik dąb Constantina i&nbsp;pies Heban">
     </picture>
   </div>
   <div class="post-section-wrapper">
@@ -70,8 +95,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6131.jpg' | relative_url }}">
-      <img srcset="{{ '/assets/images/posts/2018/IMG_6131.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;jesienne drzewa">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6131_980px.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6131_cropped.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;jesienne drzewa">
     </picture>
   </div>
   <div class="post-section-wrapper">
@@ -88,8 +113,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6206.jpg' | relative_url }}">
-      <img srcset="{{ '/assets/images/posts/2018/IMG_6206.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;trawy, linie transmisyjne i&nbsp;pies Heban">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6206_980px.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6206_cropped.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;trawy, linie transmisyjne i&nbsp;pies Heban">
     </picture>
   </div>
   <div class="post-section-wrapper">
@@ -106,8 +131,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6267.jpg' | relative_url }}">
-      <img srcset="{{ '/assets/images/posts/2018/IMG_6267.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;widok na las z&nbsp;przejścia nad Łącznikiem Długołęka">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6267_980px.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6267_cropped.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;widok na las z&nbsp;przejścia nad Łącznikiem Długołęka">
     </picture>
   </div>
   <div class="post-section-wrapper">
@@ -124,8 +149,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6330.jpg' | relative_url }}">
-      <img srcset="{{ '/assets/images/posts/2018/IMG_6330.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;pies Heban biegnie z&nbsp;patykiem w&nbsp;pysku, w&nbsp;tle jesienna feria barw">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6330_980px.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6330_cropped.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;pies Heban biegnie z&nbsp;patykiem w&nbsp;pysku, w&nbsp;tle jesienna feria barw">
     </picture>
   </div>
   <div class="post-section-wrapper">
@@ -137,8 +162,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6341.jpg' | relative_url }}">
-      <img srcset="{{ '/assets/images/posts/2018/IMG_6341.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;pies Heban węszy wśród czerwonych liści">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6341_980px.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6341_cropped.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;pies Heban węszy wśród czerwonych liści">
     </picture>
   </div>
   <div class="post-section-wrapper">
@@ -150,8 +175,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6369.jpg' | relative_url }}">
-      <img srcset="{{ '/assets/images/posts/2018/IMG_6369.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;pies Heban leży w&nbsp;liściach przy ścieżce">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6369_980px.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6369_cropped.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;pies Heban leży w&nbsp;liściach przy ścieżce">
     </picture>
   </div>
   <div class="post-section-wrapper">
@@ -168,8 +193,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6416.jpg' | relative_url }}">
-      <img srcset="{{ '/assets/images/posts/2018/IMG_6416.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;ulica Łosińska biegnie przez las">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6416_980px.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6416_cropped.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;ulica Łosińska biegnie przez las">
     </picture>
   </div>
   <div class="post-section-wrapper">
@@ -186,8 +211,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6388.jpg' | relative_url }}">
-      <img srcset="{{ '/assets/images/posts/2018/IMG_6388.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;krzaki w&nbsp;jesiennych barwach">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6388_980px.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6388_cropped.jpg' | relative_url }}" alt="Las Zakrzowski -&nbsp;krzaki w&nbsp;jesiennych barwach">
     </picture>
   </div>
   <div class="post-section-wrapper">
@@ -199,8 +224,8 @@ likes: 21
 <section class="post-section">
   <div class="post-section-photo">
     <picture>
-      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6377.jpg' | relative_url }}">
-      <img srcset="{{ '/assets/images/posts/2018/IMG_6377.jpg' | relative_url }}" alt="pies Heban -&nbsp;portret">
+      <source media="(min-width: 980px)" srcset="{{ '/assets/images/posts/2018/IMG_6377_980px.jpg' | relative_url }}">
+      <img srcset="{{ '/assets/images/posts/2018/IMG_6377_cropped.jpg' | relative_url }}" alt="pies Heban -&nbsp;portret">
     </picture>
   </div>
   <div class="post-section-wrapper">

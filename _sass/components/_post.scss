@@ -1,263 +1,578 @@
-.post {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+// Enhanced post styles to match original Aurelia structure
+// Ported from app/assets/stylesheets/components/_post.scss
 
-  .post-header {
-    margin-bottom: 2rem;
-    text-align: center;
+.post {
+  flex: 0 0 auto;
+  padding: 0 7.5%;
+  background-color: #F5F5F5;
+
+  a {
+    color: #4B9A7A;
+  }
+
+  @media #{$small, $medium} {
+    padding: 0;
+    background-color: #fff;
+  }
+}
+
+.new-post {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+
+  a {
+    color: #4b9a7a;
+  }
+
+  @media #{$large} {
+    background-color: #f5f5f5;
+  }
+}
+
+.post-header {
+  @include u-text-condensed(0.8, center);
+  font-family: $secondaryFont;
+  font-size: 1.5em;
+  text-align: center;
+  color: #757575;
+  margin: 2.5rem auto 2rem auto;
+}
+
+// Post section layout (matches original post-section structure)
+.post-section {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0 auto 2.5em auto;
+
+  @media #{$small, $medium} {
+    margin: 0 auto 1em auto;
+  }
+}
+
+.post-section.mod-vertical {
+  flex-flow: row nowrap;
+  align-items: center;
+
+  .post-section-photo,
+  .post-section-wrapper {
+    flex: 0 50%;
+    display: block;
+  }
+
+  .post-section-wrapper {
+    flex-flow: column nowrap;
+
+    @media #{$small, $medium} {
+      padding: 1em .5em;
+    }
+
+    .post-section-content {
+      padding: 30px 0 15px 0;
+      margin: 0 60px 0 60px;
+
+      &:first-child {
+        @media #{$large, $xlarge} {
+          border-right: none;
+          border-bottom: 1px solid #c3c1c1;
+        }
+
+        @media #{$small, $medium} {
+          padding-bottom: 1em;
+        }
+      }
+
+      &:only-child {
+        border-bottom: none;
+      }
+
+      @media #{$small, $medium} {
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+
+  @media #{$small, $medium} {
+    display: block;
+
+    .post-section-wrapper {
+      width: 100%;
+    }
+  }
+}
+
+.post-section-photo {
+  flex: 0 0 auto;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &.mod-border {
+    @media #{$medium, $large, $xlarge} {
+      box-shadow: inset 0 0 0 2px #e5e5e5;
+
+      img {
+        width: 70%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.post-section-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+
+  @media #{$small, $medium} {
+    display: block;
+  }
+
+  @media #{$small} {
+    font-size: 1.3em;
+  }
+}
+
+.post-section-content {
+  flex: 0 50%;
+  font-size: 0.8em;
+  margin: 1.5em 0 2em 0;
+  padding: 0 3em;
+
+  h1 {
+    @include u-text-condensed(0.9, left);
+    font-size: 1.5em;
+    margin-bottom: 1em;
+
+    @media #{$small, $medium} {
+      br {
+        display: block;
+        content: "";
+      }
+    }
+  }
+
+  p {
+    @include u-text-condensed(0.9, left);
+    line-height: 1.25;
+    margin-bottom: 0.75em;
+  }
+
+  ol {
+    padding-left: 20px;
+  }
+
+  &:not(.mod-single):first-child {
+    @media #{$large, $xlarge} {
+      border-right: 1px solid #C3C1C1;
+    }
+  }
+
+  &.mod-single {
+    flex: 0 75%;
+
+    h1, p {
+      text-align: center;
+      transform-origin: center;
+    }
+
+    @media #{$small, $medium} {
+      h1 {
+        font-size: 1em;
+      }
+    }
+  }
+
+  @media #{$small, $medium} {
+    padding: 0 .5em;
+    display: block;
 
     h1 {
-      color: $greenFontColor;
-      margin-bottom: 0.5rem;
-    }
-
-    .post-meta {
-      color: $lightGray;
-      font-size: 0.9em;
-      margin-bottom: 1rem;
-
-      time {
-        display: block;
-        margin-bottom: 0.5rem;
-      }
-
-      .post-categories {
-        .category {
-          background-color: $backgroundLightBlue;
-          color: $greenFontColor;
-          padding: 0.2em 0.6em;
-          border-radius: 4px;
-          font-size: 0.8em;
-          margin: 0 0.2em;
-          text-transform: lowercase;
-        }
-      }
-    }
-  }
-
-  .post-featured-image {
-    margin-bottom: 2rem;
-    text-align: center;
-
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-  }
-
-  .post-content {
-    line-height: $baseLineHeight;
-    margin-bottom: 2rem;
-
-    img {
-      max-width: 100%;
-      height: auto;
-      margin: 1rem 0;
-      border-radius: 4px;
+      @include u-text-condensed(0.9, center);
+      margin-bottom: .5em;
     }
 
     p {
-      margin-bottom: 1.2rem;
-    }
-  }
-
-  .post-details {
-    background-color: $backgroundLightBlue;
-    padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-
-    p {
-      margin-bottom: 0.5rem;
-      &:last-child { margin-bottom: 0; }
-    }
-
-    strong {
-      color: $greenFontColor;
-    }
-  }
-
-  .post-likes {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: $lightGray;
-    font-size: 0.9em;
-  }
-
-  .comments-archive {
-    border-top: 2px solid $gainsboro;
-    padding-top: 2rem;
-
-    h3 {
-      color: $greenFontColor;
-      margin-bottom: 1.5rem;
-    }
-
-    .comment {
-      background-color: #f9f9f9;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      border-left: 4px solid $backgroundBlue;
-
-      .comment-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 0.5rem;
-
-        strong {
-          color: $greenFontColor;
-        }
-
-        time {
-          color: $lightGray;
-          font-size: 0.8em;
-        }
-      }
-
-      .comment-content p {
-        margin-bottom: 0;
-      }
+      @include u-text-condensed(0.9, center);
     }
   }
 }
 
-// Post tile styles for listings
-.post-tile {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-bottom: 2rem;
+// Post body styles for main content
+.post-body {
+  background-color: #fff;
+  padding: 3em 5%;
 
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  @media #{$small, $medium} {
+    padding: 1em;
   }
+}
 
-  .post-tile-link {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-  }
+.new-post .post-body {
+  p, h2 {
+    width: 85%;
+    margin: 1.5em auto 2em auto;
 
-  .post-tile-image {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    &:hover img {
-      transform: scale(1.05);
+    @media #{$large} {
+      width: 60%;
     }
   }
 
-  .post-tile-content {
-    padding: 1.5rem;
+  p {
+    line-height: 1.6;
   }
 
-  .post-tile-title {
-    color: $greenFontColor;
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+  h2 {
+    font-weight: 700;
+    font-size: 1.2em;
     line-height: 1.3;
+    margin: 2em auto .75em auto;
+  }
+}
 
-    &:hover {
-      text-decoration: underline;
-    }
+// Likes section (static display only)
+.post-likes {
+  font-size: 2em;
+  text-align: center;
+  margin: .7em 0;
+
+  .fas.fa-heart {
+    color: #dea8a8;
+  }
+}
+
+.likes-header {
+  @include u-text-condensed(0.8, center);
+  font-family: $secondaryFont;
+  font-size: .5em;
+  text-align: center;
+  color: #757575;
+}
+
+// Route section
+.post-route {
+  @media #{$small, $medium} {
+    display: none;
+  }
+}
+
+.post-route-svg-container {
+  background-color: #fff;
+  padding: 2em 3em;
+
+  svg {
+    width: 97%;
+  }
+}
+
+// Map section
+.post-map {
+  width: 100%;
+
+  iframe {
+    width: 100%;
+    height: 22em;
+    border: none;
+    pointer-events: none;
+  }
+}
+
+// Hints section
+.post-hints {
+  background-color: #fff;
+  padding: 3em 5%;
+}
+
+.post-hints-list {
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+  background-color: #fff;
+  padding: 3em 2em 4.5em 2em;
+  font-size: .9rem;
+
+  @media #{$small, $medium} {
+    display: block;
+  }
+}
+
+.post-hints-list-item {
+  position: relative;
+  flex: 0 50%;
+  align-self: center;
+  padding-left: 2em;
+  padding-right: .5em;
+  margin: .5em 0;
+
+  @media #{$small, $medium} {
+    margin: 1em 0;
   }
 
-  .post-tile-meta {
-    margin-bottom: 1rem;
+  &:before {
+    content: '';
+    position: absolute;
+    left: -.3em;
+    top: 50%;
+    margin-top: -.85em;
+    display: inline-block;
+    width: 1.7em;
+    height: 1.7em;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
 
-    time {
-      color: $lightGray;
-      font-size: 0.9em;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
+// Icon modifiers for hints (complete list from original)
+.post-hints-list-item.mod-rails:before {
+  background-image: url("/assets/images/rails.svg");
+}
 
-    .post-tile-categories {
-      .category {
-        background-color: $backgroundLightBlue;
-        color: $greenFontColor;
-        padding: 0.2em 0.6em;
-        border-radius: 4px;
-        font-size: 0.75em;
-        margin: 0 0.3em 0.3em 0;
-        display: inline-block;
-        text-transform: lowercase;
-      }
-    }
+.post-hints-list-item.mod-parking:before {
+  background-image: url("/assets/images/parking.svg");
+}
+
+.post-hints-list-item.mod-swamp:before {
+  background-image: url("/assets/images/swamp.svg");
+}
+
+.post-hints-list-item.mod-tram:before {
+  background-image: url("/assets/images/tram.svg");
+}
+
+.post-hints-list-item.mod-kids:before {
+  background-image: url("/assets/images/kids.svg");
+}
+
+.post-hints-list-item.mod-playground:before {
+  background-image: url("/assets/images/playground.svg");
+}
+
+.post-hints-list-item.mod-bottle:before {
+  background-image: url("/assets/images/bottle.svg");
+}
+
+.post-hints-list-item.mod-time:before {
+  background-image: url("/assets/images/time.svg");
+}
+
+.post-hints-list-item.mod-doghouse:before {
+  background-image: url("/assets/images/doghouse.svg");
+}
+
+.post-hints-list-item.mod-park:before {
+  background-image: url("/assets/images/parki.svg");
+}
+
+.post-hints-list-item.mod-leash:before {
+  background-image: url("/assets/images/leash.svg");
+}
+
+.post-hints-list-item.mod-bride:before {
+  background-image: url("/assets/images/bride.svg");
+}
+
+.post-hints-list-item.mod-outdoor-cafe:before {
+  background-image: url("/assets/images/outdoor-cafe.svg");
+}
+
+.post-hints-list-item.mod-link:before {
+  background-image: url("/assets/images/link.svg");
+}
+
+.post-hints-list-item.mod-airplane:before {
+  background-image: url("/assets/images/airplane.svg");
+}
+
+.post-hints-list-item.mod-binoculars:before {
+  background-image: url("/assets/images/binoculars.svg");
+}
+
+.post-hints-list-item.mod-picnic-food:before {
+  background-image: url("/assets/images/picnic-food.svg");
+}
+
+.post-hints-list-item.mod-summer:before {
+  background-image: url("/assets/images/summer.svg");
+}
+
+.post-hints-list-item.mod-insect:before {
+  background-image: url("/assets/images/insect.svg");
+}
+
+.post-hints-list-item.mod-bag:before {
+  background-image: url("/assets/images/bag.svg");
+}
+
+.post-hints-list-item.mod-entry:before {
+  background-image: url("/assets/images/entry.svg");
+}
+
+.post-hints-list-item.mod-decorate-plant:before {
+  background-image: url("/assets/images/decorate-plant.svg");
+}
+
+.post-hints-list-item.mod-mountain:before {
+  background-image: url("/assets/images/góry.svg");
+}
+
+.post-hints-list-item.mod-snake:before {
+  background-image: url("/assets/images/snake.svg");
+}
+
+.post-hints-list-item.mod-route:before {
+  background-image: url("/assets/images/route.svg");
+}
+
+.post-hints-list-item.mod-treat:before {
+  background-image: url("/assets/images/treat.svg");
+}
+
+.post-hints-list-item.mod-hurdle:before {
+  background-image: url("/assets/images/hurdle.svg");
+}
+
+.post-hints-list-item.mod-dog:before {
+  background-image: url("/assets/images/dog.svg");
+}
+
+.post-hints-list-item.mod-small-area:before {
+  background-image: url("/assets/images/small-area.svg");
+}
+
+.post-hints-list-item.mod-bonfire:before {
+  background-image: url("/assets/images/bonfire.svg");
+}
+
+.post-hints-list-item.mod-observation-tower:before {
+  background-image: url("/assets/images/observation-tower.svg");
+}
+
+.post-hints-list-item.mod-bicycle:before {
+  background-image: url("/assets/images/bicycle.svg");
+}
+
+.post-hints-list-item.mod-swimming-prohibited:before {
+  background-image: url("/assets/images/swimming-prohibited.svg");
+}
+
+.post-hints-list-item.mod-water:before {
+  background-image: url("/assets/images/woda.svg");
+}
+
+.post-hints-list-item.mod-diagonal-asc:before {
+  background-image: url("/assets/images/diagonal-asc.svg");
+}
+
+.post-hints-list-item.mod-jogging:before {
+  background-image: url("/assets/images/jogging.svg");
+}
+
+.post-hints-list-item.mod-road:before {
+  background-image: url("/assets/images/road.svg");
+}
+
+.post-hints-list-item.mod-gym-rings:before {
+  background-image: url("/assets/images/gym-rings.svg");
+}
+
+.post-hints-list-item.mod-people:before {
+  background-image: url("/assets/images/people.svg");
+}
+
+.post-hints-list-item.mod-wild-life:before {
+  background-image: url("/assets/images/wild-life.svg");
+}
+
+.post-hints-list-item.mod-squirrel:before {
+  background-image: url("/assets/images/squirrel.svg");
+}
+
+.post-hints-list-item.mod-bunker:before {
+  background-image: url("/assets/images/bunker.svg");
+}
+
+.post-hints-list-item.mod-hole:before {
+  background-image: url("/assets/images/hole.svg");
+}
+
+.post-hints-list-item.mod-duck:before {
+  background-image: url("/assets/images/duck.svg");
+}
+
+.post-hints-list-item.mod-observatory:before {
+  background-image: url("/assets/images/observatory.svg");
+}
+
+.post-hints-list-item.mod-meadow:before {
+  background-image: url("/assets/images/meadow.svg");
+}
+
+.post-hints-list-item.mod-horse:before {
+  background-image: url("/assets/images/horse.svg");
+}
+
+.post-hints-list-item.mod-ticket:before {
+  background-image: url("/assets/images/ticket.svg");
+}
+
+.post-hints-list-item.mod-telephone:before {
+  background-image: url("/assets/images/telephone.svg");
+}
+
+.post-hints-list-item.mod-rocks:before {
+  background-image: url("/assets/images/rocks.svg");
+}
+
+.post-hints-list-item.mod-tent:before {
+  background-image: url("/assets/images/tent.svg");
+}
+
+.post-hints-list-item.mod-boots:before {
+  background-image: url("/assets/images/boots.svg");
+}
+
+.post-hints-list-item.mod-car:before {
+  background-image: url("/assets/images/car.svg");
+}
+
+.post-hints-list-item.mod-castle:before {
+  background-image: url("/assets/images/zamki.svg");
+}
+
+// Similar posts section
+.post-similar {
+  display: flex;
+  justify-content: space-around;
+
+  & > a {
+    flex: 0 31%;
   }
 
-  .post-tile-excerpt {
-    color: $darkGray;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-    font-size: 0.95em;
+  post-tile {
+    font-size: 1vw;
   }
 
-  .post-tile-details {
-    .detail-item {
-      color: $lightGray;
-      font-size: 0.85em;
-      margin-right: 1rem;
+  @media #{$small, $medium} {
+    display: block;
 
-      &:last-child {
-        margin-right: 0;
-      }
+    post-tile {
+      font-size: 3.5vw;
+      margin-bottom: .5em;
     }
   }
 }
 
-// Post grid layout for listings
-.posts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  margin: 2rem 0;
+// Comments section
+.post-comments {
+  padding: 0 10%;
 
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-}
-
-// Single column layout for list view
-.posts-list {
-  .post-tile {
-    display: flex;
-
-    .post-tile-image {
-      width: 200px;
-      height: 150px;
-      flex-shrink: 0;
-    }
-
-    .post-tile-content {
-      flex: 1;
-    }
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-
-      .post-tile-image {
-        width: 100%;
-        height: 200px;
-      }
-    }
+  @media #{$small, $medium} {
+    padding: 0 1em;
   }
 }

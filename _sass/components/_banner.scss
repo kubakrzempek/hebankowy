@@ -1,0 +1,113 @@
+// Banner component styles
+// Ported from app/assets/javascript/custom-elements/banner/banner.scss
+
+.banner {
+  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+.banner-image {
+  display: block;
+  width: 100%;
+
+  @media #{$large, $xlarge} {
+    height: 27.435em;
+  }
+
+  &.mobile {
+    @media #{$large, $xlarge} {
+      display: none;
+    }
+  }
+
+  &.desktop {
+    @media #{$small, $medium} {
+      display: none;
+    }
+  }
+}
+
+.banner-tile {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fefefe;
+  background-color: rgba(#000, 0.4);
+
+  @media #{$large, $xlarge} {
+    padding: 1.5em 2.5em;
+  }
+}
+
+.banner-tile-inner {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  @media #{$small, $medium} {
+    justify-content: center;
+    font-size: .6em;
+  }
+}
+
+.banner-tile-inner-header {
+  font-family: 'Buenard', serif;
+  font-weight: 700;
+  font-size: 3em;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  overflow-wrap: break-word;
+  width: 100%;
+  white-space: pre-line;
+
+  @media #{$medium} {
+    font-size: 2.3em;
+  }
+
+  @media #{$small} {
+    font-size: 2.5em;
+  }
+}
+
+.banner-tile-inner-icon {
+  width: 2.5em;
+  margin-top: 1.4em;
+  margin-bottom: .75em;
+}
+
+.banner-tile-inner-date {
+  font-size: .8em;
+  margin-bottom: .5em;
+}
+
+.banner-tile-inner-distance {
+  font-size: .9em;
+  color: #6e5f4b;
+  padding: .1em 1.5em;
+  background-color: #fff;
+}
+
+.banner-tile-inner-socials {
+  position: absolute;
+  bottom: 1.35em;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9em;
+  font-style: italic;
+
+  & > span:first-child {
+    margin-right: .5em;
+  }
+
+  @media #{$small} {
+    display: none;
+  }
+}

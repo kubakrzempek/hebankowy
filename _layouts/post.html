@@ -1,65 +1,86 @@
 ---
 layout: default
 ---
-<article class="post">
-  <header class="post-header">
-    <h1>{{ page.title }}</h1>
-    <div class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %B %Y" }}</time>
-      {% if page.categories %}
-        <div class="post-categories">
-          {% for category in page.categories %}
-            <span class="category">{{ category }}</span>
-          {% endfor %}
-        </div>
-      {% endif %}
-    </div>
-  </header>
+<img class="preloader" src="{{ page.featured_photo_url | relative_url }}" style="display: none;">
 
-  {% if page.featured_image %}
-    <div class="post-featured-image">
-      <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}">
-    </div>
-  {% endif %}
+<!-- Banner component (equivalent to banner custom element) -->
+{% include banner.html %}
 
-  <div class="post-content">
+<!-- Main post article -->
+<article class="{% if page.new_version %}new-post{% else %}post{% endif %}">
+
+  <!-- Main content section: "Na miejscu:" -->
+  <h1 class="post-header">Na miejscu:</h1>
+  <section class="post-body">
     {{ content }}
-  </div>
+  </section>
 
-  {% if page.location or page.distance or page.route %}
-    <div class="post-details">
-      {% if page.location %}
-        <p><strong>Lokalizacja:</strong> {{ page.location }}</p>
-      {% endif %}
-      {% if page.distance %}
-        <p><strong>Dystans:</strong> {{ page.distance }} km</p>
-      {% endif %}
-      {% if page.route %}
-        <p><strong>Trasa:</strong> {{ page.route }}</p>
-      {% endif %}
+  <!-- Static likes section (no interaction, display only) -->
+  <section class="post-likes">
+    <div class="likes-header">Polubienia</div>
+    <div class="likes">
+      <i class="fas fa-heart"></i>
+      {{ page.likes }}
     </div>
-  {% endif %}
+  </section>
 
-  {% if page.likes %}
-    <div class="post-likes">
-      <p>❤️ {{ page.likes }} polubień</p>
-    </div>
-  {% endif %}
-
-  {% if page.comments and page.comments.size > 0 %}
-    <section class="comments-archive">
-      <h3>Komentarze (archiwalne)</h3>
-      {% for comment in page.comments %}
-        <div class="comment">
-          <div class="comment-header">
-            <strong>{{ comment.author }}</strong>
-            <time>{{ comment.date | date: "%d.%m.%Y" }}</time>
-          </div>
-          <div class="comment-content">
-            <p>{{ comment.content }}</p>
-          </div>
-        </div>
-      {% endfor %}
+  <!-- Route section (if post has route SVG) -->
+  {% if page.route %}
+    <section class="post-route">
+      <h1 class="post-header">Szlaki:</h1>
+      <div class="post-route-svg-container">
+        {{ page.route }}
+      </div>
     </section>
   {% endif %}
+
+  <!-- Hints section: "Praktycznik:" -->
+  {% if page.hints %}
+    <section class="post-hints">
+      <h1 class="post-header">Praktycznik:</h1>
+      <div>
+        {{ page.hints }}
+      </div>
+    </section>
+  {% endif %}
+
+  <!-- Map/Location section -->
+  {% if page.location %}
+    <section class="post-map">
+      <h1 class="post-header">Lokalizacja:</h1>
+      <div>
+        {{ page.location }}
+      </div>
+    </section>
+  {% endif %}
+
+  <!-- Similar posts section: "Inne w tej kategorii:" -->
+  <h1 class="post-header">Inne w tej kategorii:</h1>
+  <!-- TODO: Implement similar posts logic -->
+  <section class="post-similar">
+    <!-- This will be implemented when we have more posts -->
+    <p><em>Podobne posty będą wyświetlane po migracji większej liczby postów.</em></p>
+  </section>
 </article>
+
+<!-- JavaScript for map interaction (matches original behavior) -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Hide preloader
+  const preloader = document.querySelector("img.preloader");
+  if (preloader) {
+    preloader.style.display = "none";
+  }
+
+  // Map click behavior (enable pointer events on click)
+  const postMap = document.querySelector('.post-map');
+  if (postMap) {
+    postMap.addEventListener('click', function(){
+      const iframe = this.querySelector('iframe');
+      if (iframe) {
+        iframe.style.pointerEvents = 'auto';
+      }
+    }, false);
+  }
+});
+</script>
