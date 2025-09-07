@@ -5,6 +5,8 @@ require 'uri'
 require 'fileutils'
 require 'date'
 require 'set'
+require 'cgi'
+require 'addressable/uri'
 
 class PostDownloader
   BASE_URL = 'https://hebankowy.pl/api/posts'
@@ -136,7 +138,14 @@ class PostDownloader
     # Convert relative URL to absolute HTTPS
     image_url = url.start_with?('http') ? url.gsub('http://', 'https://') : "https://hebankowy.pl#{url}"
 
-    uri = URI(image_url)
+    # Handle non-ASCII characters in the URL
+    begin
+      uri = URI(image_url)
+    rescue URI::InvalidURIError
+      # Use addressable gem to handle non-ASCII characters properly
+      addressable_uri = Addressable::URI.parse(image_url)
+      uri = URI(addressable_uri.normalize.to_s)
+    end
 
     begin
       response = Net::HTTP.get_response(uri)
@@ -176,17 +185,22 @@ class PostDownloader
       picture_html = picture_content[0]
 
       # Extract source tag (desktop version) - handle both attribute orders
-      source_match = picture_html.match(/<source[^>]*(?:srcset|src)="([^"]+)"[^>]*media="\(min-width:\s*(\d+)px\)"/i)
+      source_match = picture_html.match(/<source[^>]*media="\(min-width:\s*(\d+)px\)"[^>]*(?:srcset|src)="([^"]+)"/i) ||
+                     picture_html.match(/<source[^>]*(?:srcset|src)="([^"]+)"[^>]*media="\(min-width:\s*(\d+)px\)"/i)
 
       if source_match
-        desktop_url = source_match[1]
-        width = source_match[2]
+        if source_match[1] && source_match[2]
+          # First pattern: media first, then srcset
+          width = source_match[1]
+          desktop_url = source_match[2]
+        else
+          # Second pattern: srcset first, then media  
+          desktop_url = source_match[1]
+          width = source_match[2]
+        end
 
         puts "🖼️  Downloading content image (desktop #{width}px): #{desktop_url}"
-        download_image_with_suffix(desktop_url, year_dir, "_#{width}px")
-
-        # Also download the base image without suffix for Jekyll templates
-        puts "🖼️  Downloading content image (base): #{desktop_url}"
+        # Download the desktop version without any suffix for Jekyll templates
         download_image_with_suffix(desktop_url, year_dir, "")
       end
 
@@ -228,7 +242,14 @@ class PostDownloader
     # Convert relative URL to absolute
     image_url = url.start_with?('http') ? url : "https://hebankowy.pl#{url}"
 
-    uri = URI(image_url)
+    # Properly encode the URL to handle non-ASCII characters
+    begin
+      uri = URI(image_url)
+    rescue URI::InvalidURIError
+      # Use addressable gem to handle non-ASCII characters properly
+      addressable_uri = Addressable::URI.parse(image_url)
+      uri = URI(addressable_uri.normalize.to_s)
+    end
 
     begin
       response = Net::HTTP.get_response(uri)
