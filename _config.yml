@@ -1,11 +1,12 @@
 title: "Hebankowy.pl"
 description: "Blog dla miłośników psów we Wrocławiu - archiwum"
-baseurl: "/hebankowy"
+baseurl: ""
 url: "https://kubakrzempek.github.io"
 
 # Build settings
 markdown: kramdown
 highlighter: rouge
+permalink: /:slug/
 sass:
   style: compressed
   sass_dir: _sass
