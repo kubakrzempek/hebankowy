@@ -175,14 +175,19 @@ class PostDownloader
     picture_blocks.each do |picture_content|
       picture_html = picture_content[0]
 
-      # Extract source tag (desktop version)
-      source_match = picture_html.match(/<source[^>]*media="\(min-width:\s*(\d+)px\)"[^>]*srcset="([^"]+)"/i)
+      # Extract source tag (desktop version) - handle both attribute orders
+      source_match = picture_html.match(/<source[^>]*(?:srcset|src)="([^"]+)"[^>]*media="\(min-width:\s*(\d+)px\)"/i)
+
       if source_match
-        width = source_match[1]
-        desktop_url = source_match[2]
+        desktop_url = source_match[1]
+        width = source_match[2]
 
         puts "🖼️  Downloading content image (desktop #{width}px): #{desktop_url}"
         download_image_with_suffix(desktop_url, year_dir, "_#{width}px")
+
+        # Also download the base image without suffix for Jekyll templates
+        puts "🖼️  Downloading content image (base): #{desktop_url}"
+        download_image_with_suffix(desktop_url, year_dir, "")
       end
 
       # Extract img tag (mobile/cropped version)
@@ -200,7 +205,7 @@ class PostDownloader
 
     standalone_imgs.each do |match|
       url = match[0]
-      next unless url.include?('/uploads/') # Only process uploaded images
+      next unless url.include?('/uploads/') || url.include?('/assets/') # Process uploaded images and asset images
 
       # Skip if this img is inside a picture tag (already processed above)
       next if content.match(/<picture>.*?#{Regexp.escape(url)}.*?<\/picture>/m)
@@ -208,6 +213,12 @@ class PostDownloader
       puts "🖼️  Downloading standalone content image: #{url}"
       suffix = url.include?('crop') ? '_cropped' : ''
       download_image_with_suffix(url, year_dir, suffix)
+
+      # Also download the base image without suffix if it has a suffix
+      if suffix != ''
+        puts "🖼️  Downloading standalone content image (base): #{url}"
+        download_image_with_suffix(url, year_dir, "")
+      end
     end
   end
 
@@ -396,25 +407,23 @@ class PostDownloader
     # Process images in content to use local Jekyll paths with proper naming
     processed_content = content.dup
 
-    # Process source tags with media queries
-    processed_content.gsub!(/<source([^>]*)srcset="([^"]+)"([^>]*)>/i) do |match|
+    # Process source tags with media queries (both srcset and src)
+    processed_content.gsub!(/<source([^>]*)(?:srcset|src)="([^"]+)"([^>]*)>/i) do |match|
       attributes_before = $1
       url = $2
       attributes_after = $3
 
       if url.include?('/uploads/')
-        # Extract media query width
-        media_match = attributes_before.match(/media="\(min-width:\s*(\d+)px\)"/i)
-        suffix = media_match ? "_#{media_match[1]}px" : ""
-
-        # Convert to local path
+        # For desktop source tags, use base filename (no suffix)
         original_filename = File.basename(url.split('?').first)
         name_part = File.basename(original_filename, '.*')
         extension = File.extname(original_filename)
-        local_filename = "#{name_part}#{suffix}#{extension}"
+        local_filename = "#{name_part}#{extension}"
 
         local_url = "{{ '/assets/images/posts/#{year}/#{local_filename}' | relative_url }}"
-        "<source#{attributes_before}srcset=\"#{local_url}\"#{attributes_after}>"
+        # Preserve the original attribute name (srcset or src)
+        attr_name = match.match(/(srcset|src)=/i)[1]
+        "<source#{attributes_before}#{attr_name}=\"#{local_url}\"#{attributes_after}>"
       else
         match
       end
