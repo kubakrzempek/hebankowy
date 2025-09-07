@@ -15,3 +15,15 @@
   transform-origin: $origin;
   letter-spacing: 0.01em;
 }
+
+.desktop {
+  @media #{$small, $medium} {
+    display: none !important;
+  }
+}
+
+.mobile {
+  @media #{$large, $xlarge} {
+    display: none !important;
+  }
+}

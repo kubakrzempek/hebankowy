@@ -1,41 +1,43 @@
-<article class="post-tile"></article>
-  <a href="{{ post.url | relative_url }}" class="post-tile-link">
-    {% if post.featured_image %}
-      <div class="post-tile-image">
-        <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}">
-      </div>
-    {% endif %}
-
-    <div class="post-tile-content">
-      <h2 class="post-tile-title">{{ post.title }}</h2>
-
-      <div class="post-tile-meta">
-        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B %Y" }}</time>
-        {% if post.categories %}
-          <div class="post-tile-categories">
-            {% for category in post.categories %}
-              <span class="category">{{ category }}</span>
-            {% endfor %}
-          </div>
+<article class="articles-item">
+  <div class="articles-item-photo">
+    <a href="{{ post.url | relative_url }}" title="Link do {{ post.title }}">
+      <picture>
+        {% if post.cover_photo_url %}
+          <source media="(min-width: 980px)" srcset="{{ post.cover_photo_url | relative_url }}">
         {% endif %}
-      </div>
-
-      {% if post.excerpt %}
-        <div class="post-tile-excerpt">
-          {{ post.excerpt | strip_html | truncatewords: 30 }}
-        </div>
-      {% endif %}
-
-      {% if post.location or post.distance %}
-        <div class="post-tile-details">
-          {% if post.location %}
-            <span class="detail-item">📍 {{ post.location }}</span>
-          {% endif %}
-          {% if post.distance %}
-            <span class="detail-item">🚶 {{ post.distance }} km</span>
-          {% endif %}
-        </div>
-      {% endif %}
-    </div>
-  </a>
+        {% if post.mobile_cover_photo_url %}
+          <img srcset="{{ post.mobile_cover_photo_url | relative_url }}" alt="Zdjęcie do {{ post.title }}">
+        {% elsif post.cover_photo_url %}
+          <img src="{{ post.cover_photo_url | relative_url }}" alt="Zdjęcie do {{ post.title }}">
+        {% elsif post.featured_photo_url %}
+          <img src="{{ post.featured_photo_url | relative_url }}" alt="Zdjęcie do {{ post.title }}">
+        {% endif %}
+      </picture>
+    </a>
+  </div>
+  <div class="articles-item-content">
+    {% if post.categories and post.categories.size > 0 %}
+      <a class="content-category-label" href="{{ '/' | append: post.categories.first | append: '/' | relative_url }}" title="{{ post.categories.first }}">{{ post.categories.first }}</a>
+    {% endif %}
+    <h1 class="content-title">
+      <a href="{{ post.url | relative_url }}" title="Link do {{ post.title }}">
+        {{ post.title }}
+      </a>
+    </h1>
+    <p class="content-distance">
+      {% if post.distance and post.distance > 0 %}{{ post.distance }} km, {% endif %}<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B %Y" }}</time>
+    </p>
+    {% if post.teaser %}
+      <ul class="content-teaser">
+        {% assign teaser_points = post.teaser | split: '|' %}
+        {% for point in teaser_points %}
+          <li>{{ point | strip }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    <a class="button content-read-on" href="{{ post.url | relative_url }}" title="Czytaj dalej {{ post.title }}">
+      Zobacz więcej
+      <i class="fa fa-angle-right" style="margin-left:.6em;"></i>
+    </a>
+  </div>
 </article>

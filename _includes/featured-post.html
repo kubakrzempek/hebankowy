@@ -1,0 +1,28 @@
+{% comment %}
+Featured Post Component - displays the most recent post by date
+{% endcomment %}
+{% assign featured_post = site.posts.first %}
+{% if featured_post %}
+<section class="featured-post">
+  {% if featured_post.banner_photo_url %}
+    <img class="featured-post-image desktop" src="{{ featured_post.banner_photo_url | relative_url }}" alt="{{ featured_post.title }}">
+  {% endif %}
+  {% if featured_post.mobile_cover_photo_url %}
+    <img class="featured-post-image mobile" src="{{ featured_post.mobile_cover_photo_url | relative_url }}" alt="{{ featured_post.title }}">
+  {% elsif featured_post.cover_photo_url %}
+    <img class="featured-post-image mobile" src="{{ featured_post.cover_photo_url | relative_url }}" alt="{{ featured_post.title }}">
+  {% endif %}
+  <div class="featured-post-content">
+    <p class="featured-post-content-tag">Najnowszy spacer</p>
+    <h1 class="featured-post-content-title">
+      <a href="{{ featured_post.url | relative_url }}" title="Link do {{ featured_post.title }}">
+        {{ featured_post.title }}
+      </a>
+    </h1>
+    <a class="button content-read-on" href="{{ featured_post.url | relative_url }}" title="Czytaj dalej {{ featured_post.title }}">
+      Zobacz więcej
+      <i class="fa fa-angle-right" style="margin-left:.6em;"></i>
+    </a>
+  </div>
+</section>
+{% endif %}
