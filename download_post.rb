@@ -194,7 +194,7 @@ class PostDownloader
           width = source_match[1]
           desktop_url = source_match[2]
         else
-          # Second pattern: srcset first, then media  
+          # Second pattern: srcset first, then media
           desktop_url = source_match[1]
           width = source_match[2]
         end
@@ -219,20 +219,24 @@ class PostDownloader
 
     standalone_imgs.each do |match|
       url = match[0]
-      next unless url.include?('/uploads/') || url.include?('/assets/') # Process uploaded images and asset images
+      next unless url.include?('/uploads/') # Process only uploaded images
 
-      # Skip if this img is inside a picture tag (already processed above)
-      next if content.match(/<picture>.*?#{Regexp.escape(url)}.*?<\/picture>/m)
+      # Check if this img is truly standalone (not inside a picture tag)
+      # Look for a complete picture block that contains this URL
+      is_inside_picture = false
+      picture_blocks = content.scan(/<picture>(.*?)<\/picture>/m)
+      picture_blocks.each do |picture_content|
+        if picture_content[0].include?(url)
+          is_inside_picture = true
+          break
+        end
+      end
+
+      next if is_inside_picture
 
       puts "🖼️  Downloading standalone content image: #{url}"
-      suffix = url.include?('crop') ? '_cropped' : ''
-      download_image_with_suffix(url, year_dir, suffix)
-
-      # Also download the base image without suffix if it has a suffix
-      if suffix != ''
-        puts "🖼️  Downloading standalone content image (base): #{url}"
-        download_image_with_suffix(url, year_dir, "")
-      end
+      # For standalone images, download without suffix (they're usually full-size)
+      download_image_with_suffix(url, year_dir, "")
     end
   end
 
