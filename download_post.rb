@@ -153,6 +153,8 @@ class PostDownloader
       if response.code == '200'
         # Extract original filename and add suffix
         original_filename = File.basename(uri.path.split('?').first) # Remove query params like ?sha=
+        # URL decode the filename to handle Polish characters properly
+        original_filename = CGI.unescape(original_filename)
         name_part = File.basename(original_filename, '.*')
         extension = File.extname(original_filename)
 
@@ -320,6 +322,8 @@ class PostDownloader
         }
 
         original_filename = File.basename(url.split('?').first)
+        # URL decode the filename to handle Polish characters properly
+        original_filename = CGI.unescape(original_filename)
         name_part = File.basename(original_filename, '.*')
         extension = File.extname(original_filename)
         suffix = suffix_map[field] || ''
@@ -333,6 +337,8 @@ class PostDownloader
     if post_data['featured_photo'] && post_data['featured_photo']['url']
       url = post_data['featured_photo']['url']
       original_filename = File.basename(url.split('?').first)
+      # URL decode the filename to handle Polish characters properly
+      original_filename = CGI.unescape(original_filename)
       name_part = File.basename(original_filename, '.*')
       extension = File.extname(original_filename)
       final_filename = "#{name_part}_featured#{extension}"
@@ -343,6 +349,8 @@ class PostDownloader
     if post_data['cover'] && post_data['cover']['url']
       url = post_data['cover']['url']
       original_filename = File.basename(url.split('?').first)
+      # URL decode the filename to handle Polish characters properly
+      original_filename = CGI.unescape(original_filename)
       name_part = File.basename(original_filename, '.*')
       extension = File.extname(original_filename)
       final_filename = "#{name_part}_cover#{extension}"
@@ -367,6 +375,8 @@ class PostDownloader
       if post_data['seo']['image']
         url = post_data['seo']['image']
         original_filename = File.basename(url.split('?').first)
+        # URL decode the filename to handle Polish characters properly
+        original_filename = CGI.unescape(original_filename)
         name_part = File.basename(original_filename, '.*')
         extension = File.extname(original_filename)
         final_filename = "#{name_part}_seo#{extension}"
@@ -441,6 +451,8 @@ class PostDownloader
       if url.include?('/uploads/')
         # For desktop source tags, use base filename (no suffix)
         original_filename = File.basename(url.split('?').first)
+        # URL decode the filename to handle Polish characters properly
+        original_filename = CGI.unescape(original_filename)
         name_part = File.basename(original_filename, '.*')
         extension = File.extname(original_filename)
         local_filename = "#{name_part}#{extension}"
@@ -463,6 +475,8 @@ class PostDownloader
       if url.include?('/uploads/')
         # For img tags, extract potential srcset media info from nearby source tag
         original_filename = File.basename(url.split('?').first)
+        # URL decode the filename to handle Polish characters properly
+        original_filename = CGI.unescape(original_filename)
         name_part = File.basename(original_filename, '.*')
         extension = File.extname(original_filename)
 
@@ -485,6 +499,8 @@ class PostDownloader
 
       if url.include?('/uploads/')
         original_filename = File.basename(url.split('?').first)
+        # URL decode the filename to handle Polish characters properly
+        original_filename = CGI.unescape(original_filename)
         name_part = File.basename(original_filename, '.*')
         extension = File.extname(original_filename)
 
