@@ -175,7 +175,12 @@ Convert the existing Ruby Sinatra + Aurelia SPA blog to a static Jekyll site hos
   - ✅ **All content images processed**: 8 images downloaded with proper naming (`_980px` for desktop, `_cropped` for mobile)
   - ✅ **Content URLs converted**: All image URLs in content converted to Jekyll `{{ relative_url }}` format
   - ✅ **Complete frontmatter**: All API schema fields preserved including SEO, dates, metadata, distance: 70km, likes: 16)
-- [ ] stary-ksiaz - Ścieżką wśród skałek do ruin zamku Stary Książ
+- [x] stary-ksiaz - Ścieżką wśród skałek do ruin zamku Stary Książ (✅ **FULLY MIGRATED** with enhanced image processing:
+  - ✅ **All main images downloaded**: `stary_ksiaz-12_featured.jpg`, `stary_ksiaz-12_banner.jpg`, `stary_ksiaz-12_cover.jpg`, `stary_ksiaz-12_seo.jpg`, `stary_ksiaz-12_mobile_cover.jpg`
+  - ✅ **All content images processed**: 18 images downloaded with proper naming (`_980px` for desktop, `_cropped` for mobile)
+  - ✅ **Content URLs converted**: All image URLs in content converted to Jekyll `{{ relative_url }}` format
+  - ✅ **Complete frontmatter**: All API schema fields preserved including SEO, dates, metadata
+  - ✅ **FIXED: URL encoding issue** - Polish characters in filenames now properly decoded using `CGI.unescape`)
 - [ ] park-przypalacowy-w-miliczu - Park przypałacowy w Miliczu z psem - dlaczego warto tu zajrzeć?
 - [ ] park-dla-psow-gorka-slowianska - Park dla psów na Górce Słowiańskiej
 - [ ] sciezka-pod-skalkami-2 - Ścieżka pod skałkami, czyli Ślęża inaczej (część 2.)
