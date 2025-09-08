@@ -170,7 +170,11 @@ Convert the existing Ruby Sinatra + Aurelia SPA blog to a static Jekyll site hos
   - ✅ **Content URLs converted**: All image URLs in content converted to Jekyll `{{ relative_url }}` format
   - ✅ **Complete frontmatter**: All API schema fields preserved including SEO, dates, metadata)
 - [x] jesienia-na-snieznik - Wczesną jesienią na Śnieżnik! ✅
-- [ ] sciezka-hochbergow-czesc-2 - Wąwozem Pełcznicy ze starego do nowego zamku Książ
+- [x] sciezka-hochbergow-czesc-2 - Wąwozem Pełcznicy ze starego do nowego zamku Książ (✅ **FULLY MIGRATED** with enhanced image processing:
+  - ✅ **All main images downloaded**: `IMG_3983-2_banner.jpg`, `IMG_3983-2_cover.jpg`, `IMG_3983-2_featured.jpg`, `IMG_3983-2_seo.jpg`, `IMG_3983-2_mobile_cover.jpg`
+  - ✅ **All content images processed**: 8 images downloaded with proper naming (`_980px` for desktop, `_cropped` for mobile)
+  - ✅ **Content URLs converted**: All image URLs in content converted to Jekyll `{{ relative_url }}` format
+  - ✅ **Complete frontmatter**: All API schema fields preserved including SEO, dates, metadata, distance: 70km, likes: 16)
 - [ ] stary-ksiaz - Ścieżką wśród skałek do ruin zamku Stary Książ
 - [ ] park-przypalacowy-w-miliczu - Park przypałacowy w Miliczu z psem - dlaczego warto tu zajrzeć?
 - [ ] park-dla-psow-gorka-slowianska - Park dla psów na Górce Słowiańskiej
