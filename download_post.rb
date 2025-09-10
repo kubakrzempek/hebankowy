@@ -7,6 +7,7 @@ require 'date'
 require 'set'
 require 'cgi'
 require 'addressable/uri'
+require 'base64'
 
 class PostDownloader
   BASE_URL = 'https://hebankowy.pl/api/posts'
@@ -219,6 +220,8 @@ class PostDownloader
     # Also handle standalone img tags (not inside picture elements)
     standalone_imgs = content.scan(/<img[^>]*(?:src|srcset)="([^"]+)"[^>]*>/i)
 
+    # Group images by base filename to detect desktop/mobile pairs
+    image_groups = {}
     standalone_imgs.each do |match|
       url = match[0]
       next unless url.include?('/uploads/') # Process only uploaded images
@@ -236,9 +239,51 @@ class PostDownloader
 
       next if is_inside_picture
 
-      puts "🖼️  Downloading standalone content image: #{url}"
-      # For standalone images, download without suffix (they're usually full-size)
-      download_image_with_suffix(url, year_dir, "")
+      # Get base filename
+      original_filename = File.basename(url.split('?').first)
+      original_filename = CGI.unescape(original_filename)
+      name_part = File.basename(original_filename, '.*')
+      extension = File.extname(original_filename)
+      base_name = "#{name_part}#{extension}"
+
+      # Detect if this has crop parameters (indicating mobile version)
+      # Extract base64 part and decode to check for crop parameters
+      has_crop = false
+      if url.match(/\/uploads\/([A-Za-z0-9+\/=]+)\//)
+        base64_part = $1
+        begin
+          decoded = Base64.decode64(base64_part)
+          has_crop = decoded.include?('crop')
+        rescue
+          # Fallback to simple URL check
+          has_crop = url.include?('crop')
+        end
+      else
+        has_crop = url.include?('crop')
+      end
+
+      image_groups[base_name] ||= []
+      image_groups[base_name] << { url: url, has_crop: has_crop }
+    end
+
+    # Download images with appropriate suffixes
+    image_groups.each do |base_name, variants|
+      if variants.length == 1
+        # Single variant - download without suffix
+        puts "🖼️  Downloading standalone content image: #{variants[0][:url]}"
+        download_image_with_suffix(variants[0][:url], year_dir, "")
+      else
+        # Multiple variants - apply desktop/mobile logic
+        variants.each do |variant|
+          if variant[:has_crop]
+            puts "🖼️  Downloading standalone content image (mobile): #{variant[:url]}"
+            download_image_with_suffix(variant[:url], year_dir, "_cropped")
+          else
+            puts "🖼️  Downloading standalone content image (desktop): #{variant[:url]}"
+            download_image_with_suffix(variant[:url], year_dir, "")
+          end
+        end
+      end
     end
   end
 
@@ -461,6 +506,50 @@ class PostDownloader
         # Preserve the original attribute name (srcset or src)
         attr_name = match.match(/(srcset|src)=/i)[1]
         "<source#{attributes_before}#{attr_name}=\"#{local_url}\"#{attributes_after}>"
+      else
+        match
+      end
+    end
+
+    # Also handle desktop/mobile img class pattern
+    processed_content.gsub!(/<img([^>]*class="desktop"[^>]*)src="([^"]+)"([^>]*)>/i) do |match|
+      attributes_before = $1
+      url = $2
+      attributes_after = $3
+
+      if url.include?('/uploads/')
+        original_filename = File.basename(url.split('?').first)
+        # URL decode the filename to handle Polish characters properly
+        original_filename = CGI.unescape(original_filename)
+        name_part = File.basename(original_filename, '.*')
+        extension = File.extname(original_filename)
+
+        # Desktop version uses base filename (no suffix)
+        local_filename = "#{name_part}#{extension}"
+        local_url = "{{ '/assets/images/posts/#{year}/#{local_filename}' | relative_url }}"
+        "<img#{attributes_before}src=\"#{local_url}\"#{attributes_after}>"
+      else
+        match
+      end
+    end
+
+    # Handle mobile img class pattern
+    processed_content.gsub!(/<img([^>]*class="mobile"[^>]*)src="([^"]+)"([^>]*)>/i) do |match|
+      attributes_before = $1
+      url = $2
+      attributes_after = $3
+
+      if url.include?('/uploads/')
+        original_filename = File.basename(url.split('?').first)
+        # URL decode the filename to handle Polish characters properly
+        original_filename = CGI.unescape(original_filename)
+        name_part = File.basename(original_filename, '.*')
+        extension = File.extname(original_filename)
+
+        # Mobile version uses _cropped suffix
+        local_filename = "#{name_part}_cropped#{extension}"
+        local_url = "{{ '/assets/images/posts/#{year}/#{local_filename}' | relative_url }}"
+        "<img#{attributes_before}src=\"#{local_url}\"#{attributes_after}>"
       else
         match
       end
