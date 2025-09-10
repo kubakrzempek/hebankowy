@@ -2,7 +2,14 @@
 
 ## Overview
 Convert the existing Ruby Sinatra + Aurelia SPA blog to a static Jekyll site hosted on GitHub Pages using an **iterative approach**:
-1. **Foundation first** - build site structure, templates, styling
+1  - ✅ **Content URLs converted**: All image URLs in content converted to Jekyll `{{ relative_url }}` format
+  - ✅ **Complete frontmatter**: All API schema fields preserved including SEO, dates, metadata, distance: 0km, likes: 22)
+- [x] sciezka-pod-skalkami - Ścieżka pod skałkami, czyli Ślęża inaczej (część 1.) (✅ **FULLY MIGRATED** with enhanced image processing:
+  - ✅ **All main images downloaded**: `IMG_0106_featured.jpg`, `IMG_0106_banner.jpg`, `IMG_0106_cover.jpg`, `IMG_0106_seo.jpg`, `IMG_0106_mobile_cover.jpg`
+  - ✅ **All content images processed**: 22 images downloaded including: `IMG_0178.jpg`, `IMG_9962.jpg`, `IMG_9972.jpg`, `IMG_9977.jpg`, `IMG_0019.jpg`, `IMG_0059.jpg`, `IMG_0088.jpg`, `IMG_0106.jpg`, `IMG_0162.jpg`, `IMG_0211.jpg`, `IMG_0217.jpg`, `IMG_0229.jpg`, `IMG_0264.jpg`, `IMG_0284.jpg`, `IMG_0301.jpg`, `IMG_0280.jpg`, `IMG_0310.jpg` (with desktop and cropped versions)
+  - ✅ **Content URLs converted**: All image URLs in content converted to Jekyll `{{ relative_url }}` format
+  - ✅ **Complete frontmatter**: All API schema fields preserved including SEO, dates, metadata, distance: 70km, likes: 5)
+- [ ] park-w-bukowcu - Dlaczego warto przyjechać do parku w Bukowcu?Foundation first** - build site structure, templates, styling
 2. **Content migration** - convert all existing posts to static content
 3. **Remove dynamic features** - eliminate commenting, user interactions, and API dependencies
 
@@ -196,7 +203,11 @@ Convert the existing Ruby Sinatra + Aurelia SPA blog to a static Jekyll site hos
   - ✅ **All content images processed**: 18 images downloaded with proper naming (desktop and cropped versions)
   - ✅ **Content URLs converted**: All image URLs in content converted to Jekyll `{{ relative_url }}` format
   - ✅ **Complete frontmatter**: All API schema fields preserved including SEO, dates, metadata, distance: 40km, likes: 22)
-- [ ] sciezka-pod-skalkami - Ścieżka pod skałkami, czyli Ślęża inaczej (część 1.)
+- [x] sciezka-pod-skalkami - Ścieżka pod skałkami, czyli Ślęża inaczej (część 1.) (✅ **FULLY MIGRATED** with enhanced image processing:
+  - ✅ **All main images downloaded**: `IMG_0106_featured.jpg`, `IMG_0106_banner.jpg`, `IMG_0106_cover.jpg`, `IMG_0106_seo.jpg`, `IMG_0106_mobile_cover.jpg`
+  - ✅ **All content images processed**: 22 images downloaded including: `IMG_0178.jpg`, `IMG_9962.jpg`, `IMG_9972.jpg`, `IMG_9977.jpg`, `IMG_0019.jpg`, `IMG_0059.jpg`, `IMG_0088.jpg`, `IMG_0106.jpg`, `IMG_0162.jpg`, `IMG_0211.jpg`, `IMG_0217.jpg`, `IMG_0229.jpg`, `IMG_0264.jpg`, `IMG_0284.jpg`, `IMG_0301.jpg`, `IMG_0280.jpg`, `IMG_0310.jpg` (with desktop and cropped versions)
+  - ✅ **Content URLs converted**: All image URLs in content converted to Jekyll `{{ relative_url }}` format
+  - ✅ **Complete frontmatter**: All API schema fields preserved including SEO, dates, metadata, distance: 70km, likes: 5)
 - [ ] park-w-bukowcu - Dlaczego warto przyjechać do parku w Bukowcu?
 - [ ] park-dla-psow-w-trzebnicy - Testujemy 4 Łapy - park dla psów w Trzebnicy
 - [ ] park-lesnicki-spacer-od-palacu-do-starego-debu - Park Leśnicki - spacer od pałacu do starego dębu
