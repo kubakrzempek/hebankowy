@@ -223,6 +223,11 @@ Convert the existing Ruby Sinatra + Aurelia SPA blog to a static Jekyll site hos
   - ✅ **All content images processed**: 14 images downloaded including: `IMG_1695.jpg`, `IMG_1688.jpg`, `IMG_1679.jpg`, `IMG_1557.jpg`, `IMG_1349.jpg`, `IMG_1669.jpg`, `IMG_1524.jpg`, `IMG_1542.jpg`, `IMG_1584.jpg`, `IMG_1610.jpg`, `IMG_1617.jpg`, `IMG_1637.jpg`, `IMG_1643.jpg`, `IMG_1656.jpg`
   - ✅ **Content URLs converted**: All image URLs in content converted to Jekyll `{{ relative_url }}` format
   - ✅ **Complete frontmatter**: All API schema fields preserved including SEO, dates, metadata)
+- [x] zamek-w-bolkowie-z-psem - Pies Heban zdobywa zamek w Bolkowie (✅ **FULLY MIGRATED** with enhanced image processing:
+  - ✅ **All main images downloaded**: `IMG_1767_featured.jpg`, `IMG_1767_banner.jpg`, `IMG_1767_cover.jpg`, `IMG_1767_mobile_cover.jpg`, `IMG_1767_seo.jpg`
+  - ✅ **All content images processed**: 8 images downloaded including: `Swiny-20.jpg`, `Swiny-20_cropped.jpg`, `IMG_1767_cropped.jpg`, `IMG_1776_cropped.jpg`, `IMG_1796_cropped.jpg`, `IMG_1799_cropped.jpg`, `IMG_1795_cropped.jpg`, `Beskidy_Wisła-15_cropped.jpg`, `IMG_1800-Edit.jpg`, `IMG_1800-Edit_cropped.jpg`
+  - ✅ **Content URLs converted**: All image URLs in content converted to Jekyll `{{ relative_url }}` format
+  - ✅ **Complete frontmatter**: All API schema fields preserved including SEO, dates, metadata, distance: 60km, likes: 14)
 - [ ] odkrywamy-z-psem-skalny-zamek-bolczow - Odkrywamy skalny zamek Bolczów w Rudawach Janowickich
 - [ ] zamek-w-swinach-z-psem - Zamek w Świnach, czyli pies w donżonie
 - [ ] sokoliki-w-rudawach-janowickich - W poszukiwaniu Sokolika w Rudawach Janowickich
