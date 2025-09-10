@@ -331,6 +331,16 @@ Convert the existing Ruby Sinatra + Aurelia SPA blog to a static Jekyll site hos
 - [ ] Create category archive pages
 - [ ] Test category navigation and pages
 
+#### 3.5 SEO Implementation Enhancement
+- [ ] **Update `_layouts/default.html` to properly use SEO frontmatter**:
+  - [ ] **Tab title**: Use `page.seo_title` if available, fallback to `page.title`
+  - [ ] **Meta description**: Use `page.seo_description`
+  - [ ] **Meta image**: Use `page.seo_image` for social sharing
+  - [ ] **Open Graph tags**: Implement proper OG tags for social media
+  - [ ] **Twitter Card tags**: Add Twitter-specific meta tags
+- [ ] **Test SEO tag inheritance** from post frontmatter
+- [ ] **Verify all migrated posts have complete SEO data**
+
 **✅ Template Migration Complete When**: All UI components work and match original design
 
 ---
@@ -391,7 +401,12 @@ Convert the existing Ruby Sinatra + Aurelia SPA blog to a static Jekyll site hos
 - [ ] Test CSS styling across browsers
 - [ ] Check responsive design on multiple devices
 - [ ] Test site performance and loading times
-- [ ] Validate SEO meta tags
+- [ ] **Validate SEO meta tags and implementation**:
+  - [ ] **Verify tab titles use `seo_title` from frontmatter** (not just `title`)
+  - [ ] **Double-check all SEO tags**: `seo_title`, `seo_description`, `seo_image`
+  - [ ] **Ensure proper meta tag implementation** in `_layouts/default.html`
+  - [ ] **Test social media sharing previews** (Facebook, Twitter, LinkedIn)
+  - [ ] **Validate structured data** if applicable
 
 #### 5.3 User Experience Testing
 - [ ] Test navigation flow
