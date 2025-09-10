@@ -258,7 +258,7 @@ Convert the existing Ruby Sinatra + Aurelia SPA blog to a static Jekyll site hos
   - ✅ **All content images processed**: 14 images downloaded including: `Nad_Odrą-1.jpg`, `Nad_Odrą-1_cropped.jpg`, `Nad_Odrą-2.jpg`, `Nad_Odrą-2_cropped.jpg`, `Nad_Odrą-3.jpg`, `Nad_Odrą-4.jpg`, `Nad_Odrą-4_cropped.jpg`, `Nad_Odrą-5.jpg`, `Nad_Odrą-5_cropped.jpg`, `Nad_Odrą-6.jpg`, `Nad_Odrą-6_cropped.jpg`, `Nad_Odrą-7.jpg`, `Nad_Odrą-7_cropped.jpg`, `Nad_Odrą-8.jpg`
   - ✅ **Content URLs converted**: All image URLs in content converted to Jekyll `{{ relative_url }}` format
   - ✅ **Complete frontmatter**: All API schema fields preserved including SEO, dates, metadata)
-- [ ] w-lesie-i-nad-rzeka-w-dolinie-baryczy - W lesie i nad rzeką w Dolinie Baryczy
+- [x] ✅ w-lesie-i-nad-rzeka-w-dolinie-baryczy - W lesie i nad rzeką w Dolinie Baryczy
 - [ ] miasteczko-katy-i-heban-piaty - Miasteczko Kąty i Heban piąty! Co słychać w deszczowych Kątach Wrocławskich
 - [ ] park-wschodni-wiosenny-park-na-wyspach - Park Wschodni - wiosenny park na wyspach
 - [ ] kraina-zielonych-kamieni-czyli-skalki-na-zboczu-slezy - Kraina zielonych kamieni, czyli skałki na zboczu Ślęży
