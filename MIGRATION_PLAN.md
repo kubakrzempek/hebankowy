@@ -319,7 +319,11 @@ Convert the existing Ruby Sinatra + Aurelia SPA blog to a static Jekyll site hos
   - ✅ **All content images processed**: 14 images downloaded including: `IMG_5673.jpg`, `IMG_5673_cropped.jpg`, `IMG_5682.jpg`, `IMG_5682_cropped.jpg`, `IMG_5679.jpg`, `IMG_5679_cropped.jpg`, `IMG_5709-Edit.jpg`, `IMG_5709-Edit_cropped.jpg`, `IMG_5698.jpg`, `IMG_5698_cropped.jpg`, `kolorowe_jeziorka_skalny_bog.jpg`, `IMG_5718.jpg`, `IMG_5718_cropped.jpg`, `IMG_5729.jpg`, `IMG_5729_cropped.jpg`, `IMG_5744.jpg`, `IMG_5744_cropped.jpg`, `IMG_5766.jpg`, `IMG_5766_cropped.jpg`, `IMG_5909.jpg`, `IMG_5909_cropped.jpg`, `IMG_5762.jpg`, `IMG_5762_cropped.jpg`
   - ✅ **Content URLs converted**: All image URLs in content converted to Jekyll `{{ relative_url }}` format
   - ✅ **Complete frontmatter**: All API schema fields preserved including SEO, dates, metadata)
-- [ ] borowkowa-gora-i-zaginiona-wies - Borówkowa góra i zaginiona wieś
+- [x] borowkowa-gora-i-zaginiona-wies - Borówkowa góra i zaginiona wieś (✅ **FULLY MIGRATED** with enhanced image processing:
+  - ✅ **All main images downloaded**: `IMG_3691_featured.jpg`, `borowkowa_okladka-3691_cover.jpg`, `borowkowa_okladka-3691_mobile_cover.jpg`, `IMG_3691_seo.jpg`
+  - ✅ **All content images processed**: 17 images downloaded including: `IMG_3567.jpg`, `IMG_3567_cropped.jpg`, `IMG_3569.jpg`, `IMG_3569_cropped.jpg`, `IMG_3582.jpg`, `IMG_3591.jpg`, `IMG_3597.jpg`, `IMG_3615.jpg`, `IMG_3615_cropped.jpg`, `IMG_3668.jpg`, `IMG_3668_cropped.jpg`, `IMG_3687.jpg`, `IMG_3687_cropped.jpg`, `IMG_3676.jpg`, `IMG_3676_cropped.jpg`, `IMG_3691.jpg`, `IMG_3691_cropped.jpg`, `IMG_3704.jpg`, `IMG_3704_cropped.jpg`, `IMG_3683.jpg`
+  - ✅ **Content URLs converted**: All image URLs in content converted to Jekyll `{{ relative_url }}` format
+  - ✅ **Complete frontmatter**: All API schema fields preserved including SEO, dates, metadata, distance: 30km, likes: 10)
 - [ ] psi-plac-zabaw-w-parku-grabiszynskim - Psi plac zabaw w Parku Grabiszyńskim
 - [ ] jak-pies-heban-wszedl-na-skrzyczne - Jak pies Heban wszedł na Skrzyczne
 - [ ] odkrywamy-park-we-wroclawskich-pawlowicach - Odkrywamy park we wrocławskich Pawłowicach
