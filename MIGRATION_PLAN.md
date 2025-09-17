@@ -335,7 +335,7 @@ Convert the existing Ruby Sinatra + Aurelia SPA blog to a static Jekyll site hos
   - ✅ **Content URLs converted**: All image URLs in content converted to Jekyll `{{ relative_url }}` format
   - ✅ **Complete frontmatter**: All API schema fields preserved including SEO, dates, metadata)
 - [x] odkrywamy-park-we-wroclawskich-pawlowicach - Odkrywamy park we wrocławskich Pawłowicach
-- [ ] sulow-mala-wies-i-niespodziewany-wysyp-atrakcji - Sułów - mała wieś i niespodziewany wysyp atrakcji
+- [x] sulow-mala-wies-i-niespodziewany-wysyp-atrakcji - Sułów - mała wieś i niespodziewany wysyp atrakcji
 - [ ] w-poszukiwaniu-jeziora-bajkal - W poszukiwaniu jeziora Bajkał...
 - [ ] szymanow-szybowce-i-spadochroniarze-wsrod-pol - Szymanów - szybowce i spadochroniarze wśród pól
 - [ ] zamek-na-wodzie-i-piknik-w-wojnowicach - Zamek na wodzie i piknik w Wojnowicach
