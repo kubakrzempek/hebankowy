@@ -339,7 +339,7 @@ Convert the existing Ruby Sinatra + Aurelia SPA blog to a static Jekyll site hos
 - [x] w-poszukiwaniu-jeziora-bajkal - W poszukiwaniu jeziora Bajkał...
 - [x] szymanow-szybowce-i-spadochroniarze-wsrod-pol - Szymanów - szybowce i spadochroniarze wśród pól
 - [x] zamek-na-wodzie-i-piknik-w-wojnowicach - Zamek na wodzie i piknik w Wojnowicach
-- [ ] wuwa-nowatorska-architektura-przelomu-lat-20-i-30 - WuWA - nowatorska architektura przełomu lat '20 i '30
+- [x] wuwa-nowatorska-architektura-przelomu-lat-20-i-30 - WuWA - nowatorska architektura przełomu lat '20 i '30
 - [ ] park-zlotnicki-parko-las-pelen-wiosny - Park Złotnicki parko-las pełen wiosny
 
 #### 2.3 Download and Convert Individual Posts
