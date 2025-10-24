@@ -284,7 +284,6 @@
 
 // Hints section
 .post-hints {
-  background-color: #fff;
   padding: 3em 5%;
 }
 
@@ -549,24 +548,74 @@
 .post-similar {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 3em;
 
   & > a {
     flex: 0 31%;
   }
 
-  post-tile {
-    font-size: 1vw;
-  }
-
   @media #{$small, $medium} {
     display: block;
+    margin-bottom: 2em;
 
-    post-tile {
-      font-size: 3.5vw;
+    & > a {
       margin-bottom: .5em;
     }
   }
 }
+
+.post-tile-similar-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-tile-similar {
+  display: block;
+  position: relative;
+  font-size: 1vw;
+
+  @media #{$small, $medium} {
+    font-size: 3.5vw;
+  }
+}
+
+.post-tile-image {
+  display: block;
+  width: 100%;
+}
+
+.post-tile-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #fefefe;
+  background-color: rgba(0, 0, 0, .3);
+  padding: .5em;
+}
+
+.post-tile-content-date {
+  position: absolute;
+  top: .5em;
+  left: .5em;
+}
+
+.post-tile-content-title {
+  text-align: center;
+  font-size: 1.7em;
+  margin: 0;
+}
+
+.post-tile-content-distance {
+  margin-bottom: .5em;
+}
+
 
 // Comments section
 .post-comments {

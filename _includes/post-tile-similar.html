@@ -1,0 +1,14 @@
+<a href="{{ post.url | relative_url }}" class="post-tile-similar-link">
+  <article class="post-tile-similar">
+    <img class="post-tile-image" src="{{ post.cover_photo_url | default: post.featured_photo_url | relative_url }}" alt="{{ post.title }}">
+    <div class="post-tile-content">
+      <div class="post-tile-content-date">
+        {{ post.date | date: "%d.%m.%Y" }}
+      </div>
+      <h2 class="post-tile-content-title">{{ post.title }}</h2>
+      {% if post.distance and post.distance > 0 %}
+        <p class="post-tile-content-distance">{{ post.distance }} km</p>
+      {% endif %}
+    </div>
+  </article>
+</a>

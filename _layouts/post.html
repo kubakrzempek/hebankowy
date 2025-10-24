@@ -55,12 +55,28 @@ layout: default
   {% endif %}
 
   <!-- Similar posts section: "Inne w tej kategorii:" -->
+  {% assign similar_posts = "" | split: "" %}
+  {% if page.categories %}
+    {% assign primary_category = page.categories | first %}
+    {% if primary_category %}
+      {% assign similar_posts = site.posts | where_exp: "post", "post.id != page.id" %}
+      {% assign similar_posts = similar_posts | where_exp: "post", "post.categories contains primary_category" %}
+    {% endif %}
+  {% endif %}
+  {% assign similar_posts_count = similar_posts | size %}
+
   <h1 class="post-header">Inne w tej kategorii:</h1>
-  <!-- TODO: Implement similar posts logic -->
-  <section class="post-similar">
-    <!-- This will be implemented when we have more posts -->
-    <p><em>Podobne posty będą wyświetlane po migracji większej liczby postów.</em></p>
-  </section>
+  {% if similar_posts_count > 0 %}
+    <section class="post-similar">
+      {% for post in similar_posts limit: 3 %}
+        {% include post-tile-similar.html %}
+      {% endfor %}
+    </section>
+  {% else %}
+    <section class="post-similar">
+      <p><em>Brak podobnych wpisów w tej kategorii.</em></p>
+    </section>
+  {% endif %}
 </article>
 
 <!-- JavaScript for map interaction (matches original behavior) -->
