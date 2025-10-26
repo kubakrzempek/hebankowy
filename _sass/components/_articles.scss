@@ -68,7 +68,6 @@
     line-height: 1.15;
     margin-bottom: .3em;
     a {
-      // white-space: pre-wrap;
       color: inherit;
       text-decoration: none;
     }
@@ -128,6 +127,7 @@
     border: 1px solid $bcgColor;
     text-decoration: none;
     display: inline-block;
+    text-transform: uppercase;
     &:hover {
       background-color: darken($bcgColor, 10%);
       border-color: darken($bcgColor, 10%);

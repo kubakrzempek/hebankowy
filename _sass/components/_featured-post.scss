@@ -74,20 +74,20 @@
 }
 
 .content-read-on {
-  $bcgColor: #81ca9c;
   margin-left: 0;
   font-size: .6em;
   padding: .7em 2em;
   border-radius: 100px;
   color: #fff;
-  background-color: $bcgColor;
-  border: 1px solid $bcgColor;
+  background-color: $readOnColor;
+  border: 1px solid $readOnColor;
   margin-top: 3em;
   display: inline-block;
   text-decoration: none;
+  text-transform: uppercase;
   &:hover {
-    background-color: darken($bcgColor, 10%);
-    border-color: darken($bcgColor, 10%);
+    background-color: darken($readOnColor, 10%);
+    border-color: darken($readOnColor, 10%);
   }
   @media #{$small, $medium} {
     font-size: .7em;

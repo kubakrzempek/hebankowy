@@ -73,7 +73,7 @@
         </a>
       </div>
       <div class="global-header-navbar-collapse">
-        <i class="fa fa-bars"></i>
+        <i class="fa fa-bars" onclick="toggleMobileMenu()"></i>
       </div>
       {% include navigation.html %}
     </header>
@@ -84,5 +84,15 @@
 
     {% include footer.html %}
   </div>
+
+  <script>
+    function toggleMobileMenu() {
+      const navBar = document.querySelector('.nav-bar');
+
+      if (navBar) {
+        navBar.classList.toggle('visible');
+      }
+    }
+  </script>
 </body>
 </html>
