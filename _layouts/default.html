@@ -4,14 +4,57 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.title %}{{ page.title }} - {% endif %}hebankowy.pl - blog o wycieczkach z psem</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}O tym, gdzie zabrać swojego psa na wycieczkę we Wrocławiu i na Dolnym Śląsku w ogóle. Przełamujemy rutynę jednego parku i ruszamy o krok dalej.{% endif %}">
+
+  <!-- Page Title: Use seo_title if available, fallback to title -->
+  {% if page.layout == 'post' and page.seo_title %}
+  <title>{{ page.seo_title }} | hebankowy.pl Blog</title>
+  {% elsif page.title %}
+  <title>{{ page.title }} - hebankowy.pl</title>
+  {% else %}
+  <title>hebankowy.pl - blog o wycieczkach z psem</title>
+  {% endif %}
+
+  <!-- Meta Description: Use seo_description if available, fallback to excerpt or default -->
+  <meta name="description" content="{% if page.seo_description %}{{ page.seo_description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}O tym, gdzie zabrać swojego psa na wycieczkę we Wrocławiu i na Dolnym Śląsku w ogóle. Przełamujemy rutynę jednego parku i ruszamy o krok dalej.{% endif %}">
+
   <meta name="subject" content="hebankowy.pl, czyli aktywnie z psem we Wrocławiu">
+  <meta name="author" content="hebankowy.pl">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="{% if page.title %}{{ page.title }} - {% endif %}hebankowy.pl - blog o wycieczkach z psem | Wrocław">
-  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}O tym, gdzie zabrać swojego psa na wycieczkę we Wrocławiu i na Dolnym Śląsku w ogóle. Przełamujemy rutynę jednego parku i ruszamy o krok dalej.{% endif %}">
-  <meta property="og:image" content="{% if page.seo_image %}{{ page.seo_image | absolute_url }}{% endif %}">
+  <meta property="og:site_name" content="hebankowy.pl">
+  {% if page.layout == 'post' and page.seo_title %}
+  <meta property="og:title" content="{{ page.seo_title }} | hebankowy.pl Blog">
+  {% elsif page.title %}
+  <meta property="og:title" content="{{ page.title }} - hebankowy.pl - blog o wycieczkach z psem | Wrocław">
+  {% else %}
+  <meta property="og:title" content="hebankowy.pl - blog o wycieczkach z psem | Wrocław">
+  {% endif %}
+  <meta property="og:description" content="{% if page.seo_description %}{{ page.seo_description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}O tym, gdzie zabrać swojego psa na wycieczkę we Wrocławiu i na Dolnym Śląsku w ogóle. Przełamujemy rutynę jednego parku i ruszamy o krok dalej.{% endif %}">
+  <meta property="og:image" content="{% if page.seo_image %}{{ page.seo_image | absolute_url }}{% elsif page.featured_photo_url %}{{ page.featured_photo_url | absolute_url }}{% endif %}">
+  <meta property="og:image:alt" content="{% if page.seo_title %}{{ page.seo_title }}{% elsif page.title %}{{ page.title }}{% else %}hebankowy.pl{% endif %}">
+  <meta property="og:locale" content="pl_PL">
+  {% if page.layout == 'post' %}
+  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+  {% if page.updated_at %}<meta property="article:modified_time" content="{{ page.updated_at }}">{% endif %}
+  {% if page.categories %}{% for category in page.categories %}<meta property="article:section" content="{{ category }}">{% endfor %}{% endif %}
+  {% endif %}
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="{{ page.url | absolute_url }}">
+  {% if page.layout == 'post' and page.seo_title %}
+  <meta name="twitter:title" content="{{ page.seo_title }} | hebankowy.pl Blog">
+  {% elsif page.title %}
+  <meta name="twitter:title" content="{{ page.title }} - hebankowy.pl">
+  {% else %}
+  <meta name="twitter:title" content="hebankowy.pl - blog o wycieczkach z psem">
+  {% endif %}
+  <meta name="twitter:description" content="{% if page.seo_description %}{{ page.seo_description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}O tym, gdzie zabrać swojego psa na wycieczkę we Wrocławiu i na Dolnym Śląsku w ogóle. Przełamujemy rutynę jednego parku i ruszamy o krok dalej.{% endif %}">
+  <meta name="twitter:image" content="{% if page.seo_image %}{{ page.seo_image | absolute_url }}{% elsif page.featured_photo_url %}{{ page.featured_photo_url | absolute_url }}{% endif %}">
+  <meta name="twitter:image:alt" content="{% if page.seo_title %}{{ page.seo_title }}{% elsif page.title %}{{ page.title }}{% else %}hebankowy.pl{% endif %}">
+
   <base href="/">
 
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
