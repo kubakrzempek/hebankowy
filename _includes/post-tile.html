@@ -25,7 +25,9 @@
       </a>
     </h1>
     <p class="content-distance">
-      {{ post.distance }}, <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B %Y" }}</time>
+      {% assign polish_months_abbr = "sty,lut,mar,kwi,maj,cze,lip,sie,wrz,paź,lis,gru" | split: "," %}
+      {% assign month_index = post.date | date: "%-m" | minus: 1 %}
+      {{ post.distance }}, <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d" }} {{ polish_months_abbr[month_index] }} {{ post.date | date: "%Y" }}</time>
     </p>
     {% if post.teaser %}
       <ul class="content-teaser">

@@ -7,7 +7,9 @@
       <img class="banner-tile-inner-icon" src="/assets/images/{{ page.categories[0] }}-white.svg" alt="{{ page.categories[0] }}">
 
       <time class="banner-tile-inner-date" datetime="{{ page.date | date_to_xmlschema }}">
-        <em>{{ page.date | date: "%-d %B '%y" }}</em>
+        {% assign polish_months = "stycznia,lutego,marca,kwietnia,maja,czerwca,lipca,sierpnia,września,października,listopada,grudnia" | split: "," %}
+        {% assign month_index = page.date | date: "%-m" | minus: 1 %}
+        <em>{{ page.date | date: "%-d" }} {{ polish_months[month_index] }} '{{ page.date | date: "%y" }}</em>
       </time>
 
       <h1 class="banner-tile-inner-header">{{ page.title }}</h1>
