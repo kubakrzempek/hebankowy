@@ -9,7 +9,7 @@ featured_photo_url: "/assets/images/posts/2017/IMG_1923_featured.jpg"
 banner_photo_url: "/assets/images/posts/2017/IMG_1923_banner.jpg"
 cover_photo_url: "/assets/images/posts/2017/IMG_1923_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2017/IMG_1923_mobile_cover.jpg"
-distance: 31
+distance: "31 km od Wrocławia"
 likes: 9
 teaser: "kilkanaście przeszkód dla psów | wolna przestrzeń do zabawy | otoczenie bukowego lasu"
 hints: |

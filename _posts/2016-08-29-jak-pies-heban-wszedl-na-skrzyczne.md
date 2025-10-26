@@ -11,7 +11,7 @@ featured_photo_url: "/assets/images/posts/2016/IMG_5398-Edit_featured.jpg"
 cover_photo_url: "/assets/images/posts/2016/skrzyczne_okladka_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2016/skrzyczne_okladka_mobile_cover.jpg"
 cover_alt: "skrzyczne okladka"
-distance: 290
+distance: "290 km od Wrocławia"
 likes: 8
 teaser: "piękna panorama na Kotlinę Żywiecką | skałki z piaskowców | szczyt Korony Polski"
 hints: |

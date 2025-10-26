@@ -11,7 +11,7 @@ featured_photo_url: "/assets/images/posts/2017/Nad_Odrą-2_featured.jpg"
 banner_photo_url: "/assets/images/posts/2017/Nad_Odrą-2_banner.jpg"
 cover_photo_url: "/assets/images/posts/2017/Nad_Odrą-2_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2017/Nad_Odrą-2_mobile_cover.jpg"
-distance: 0
+distance: "we Wrocławiu"
 likes: 6
 teaser: "chillout nad rzeką | spokojna okolica | blisko centrum"
 hints: |

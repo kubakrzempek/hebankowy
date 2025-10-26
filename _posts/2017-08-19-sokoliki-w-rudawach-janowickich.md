@@ -11,7 +11,7 @@ featured_photo_url: "/assets/images/posts/2017/Sokoliki_Rudawy_Janowickie-18_fea
 banner_photo_url: "/assets/images/posts/2017/Sokoliki_Rudawy_Janowickie-18_banner.jpg"
 cover_photo_url: "/assets/images/posts/2017/Sokoliki_Rudawy_Janowickie-18_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2017/Sokoliki_Rudawy_Janowickie-18_mobile_cover.jpg"
-distance: 115
+distance: "115 km od Wrocławia"
 likes: 8
 teaser: "3 punkty widokowe | granitowe ostańce | bardzo szybka trasa"
 hints: |

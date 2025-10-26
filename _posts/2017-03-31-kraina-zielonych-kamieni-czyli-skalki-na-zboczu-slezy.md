@@ -9,7 +9,7 @@ featured_photo_url: "/assets/images/posts/2017/IMG_7165_featured.jpg"
 banner_photo_url: "/assets/images/posts/2017/IMG_7165_banner.jpg"
 cover_photo_url: "/assets/images/posts/2017/IMG_7165_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2017/IMG_7165_mobile_cover.jpg"
-distance: 46
+distance: "46 km od Wrocławia"
 likes: 15
 teaser: "punkt widokowy na skale | rumowiska kamieni | łatwa trasa"
 hints: |

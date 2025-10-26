@@ -11,7 +11,7 @@ featured_photo_url: "/assets/images/posts/2018/IMG_6330_featured.jpg"
 banner_photo_url: "/assets/images/posts/2018/IMG_6330_banner.jpg"
 cover_photo_url: "/assets/images/posts/2018/IMG_6330_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2018/IMG_6330_mobile_cover.jpg"
-distance: 0
+distance: "we Wrocławiu"
 likes: 21
 teaser: "dąb-pomnik |  różnorodna trasa | jesienna feria barw"
 hints: |

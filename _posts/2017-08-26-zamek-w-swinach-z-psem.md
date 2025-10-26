@@ -9,7 +9,7 @@ featured_photo_url: "/assets/images/posts/2017/Świny_zamek-4_featured.jpg"
 banner_photo_url: "/assets/images/posts/2017/Swiny-10_banner.jpg"
 cover_photo_url: "/assets/images/posts/2017/Świny_zamek-4_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2017/Świny_zamek-4_mobile_cover.jpg"
-distance: 80
+distance: "80 km od Wrocławia"
 likes: 10
 teaser: "ruiny starego zamku z wieżą mieszkalną | widok na miasto i zamek Bolków  | możliwość wejścia do środka z psem"
 hints: |

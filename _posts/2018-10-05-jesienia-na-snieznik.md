@@ -9,7 +9,7 @@ featured_photo_url: "/assets/images/posts/2018/IMG_2221_featured.jpg"
 banner_photo_url: "/assets/images/posts/2018/IMG_2221_banner.jpg"
 cover_photo_url: "/assets/images/posts/2018/IMG_2221_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2018/IMG_2221_mobile_cover.jpg"
-distance: 125
+distance: "125 km od Wrocławia"
 likes: 14
 teaser: "szeroka panorama Sudetów | rozległe polany wokół schroniska | kilka wymagających podejść"
 hints: |

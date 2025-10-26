@@ -11,7 +11,7 @@ featured_photo_url: "/assets/images/posts/2016/IMG_6432-Edit_featured.jpg"
 cover_photo_url: "/assets/images/posts/2016/las_osobowicki_okladka_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2016/las_osobowicki_okladka_mobile_cover.jpg"
 cover_alt: "las osobowicki okładka"
-distance: 0
+distance: "we Wrocławiu"
 likes: 9
 teaser: "Święte Wzgórze | trasy do biegu na orientację | malownicze alejki"
 hints: |

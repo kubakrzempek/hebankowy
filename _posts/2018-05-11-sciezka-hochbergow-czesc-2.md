@@ -9,7 +9,7 @@ featured_photo_url: "/assets/images/posts/2018/IMG_3983-2_featured.jpg"
 banner_photo_url: "/assets/images/posts/2018/IMG_3983-2_banner.jpg"
 cover_photo_url: "/assets/images/posts/2018/IMG_3983-2_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2018/IMG_3983-2_mobile_cover.jpg"
-distance: 70
+distance: "70 km od Wrocławia"
 likes: 16
 teaser: "nietypowy widok na zamek | szlak biegnący brzegiem rzeki | krótka, spokojna trasa"
 hints: |

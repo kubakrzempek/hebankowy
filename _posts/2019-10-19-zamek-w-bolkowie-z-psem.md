@@ -9,7 +9,7 @@ featured_photo_url: "/assets/images/posts/2019/IMG_1767_featured.jpg"
 banner_photo_url: "/assets/images/posts/2019/IMG_1767_banner.jpg"
 cover_photo_url: "/assets/images/posts/2019/IMG_1767_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2019/IMG_1767_mobile_cover.jpg"
-distance: 80
+distance: "80 km od Wrocławia"
 likes: 4
 hints: |
     <ul class="post-hints-list">

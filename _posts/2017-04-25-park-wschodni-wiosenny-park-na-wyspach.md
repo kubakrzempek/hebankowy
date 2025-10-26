@@ -9,7 +9,7 @@ featured_photo_url: "/assets/images/posts/2017/IMG_7395-Edit_featured.jpg"
 banner_photo_url: "/assets/images/posts/2017/IMG_7395-Edit_banner.jpg"
 cover_photo_url: "/assets/images/posts/2017/park_wschodni_glowne_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2017/IMG_7395-Edit_mobile_cover.jpg"
-distance: 0
+distance: "we Wrocławiu"
 likes: 6
 teaser: "park otoczony wodą | kwieciste łąki i polany idealne na piknik | megafony do posiedzenia"
 hints: |

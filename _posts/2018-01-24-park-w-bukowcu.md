@@ -11,7 +11,7 @@ featured_photo_url: "/assets/images/posts/2018/IMG_2618-Edit-Edit_featured.jpg"
 banner_photo_url: "/assets/images/posts/2018/IMG_2618-Edit-Edit_banner.jpg"
 cover_photo_url: "/assets/images/posts/2018/IMG_2618-Edit-Edit_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2018/IMG_2618-Edit-Edit_mobile_cover.jpg"
-distance: 110
+distance: "110 km od Wrocławia"
 likes: 6
 teaser: "czynna wieża widokowa | jeden z pierwszych ogrodów angielskich na Śląsku | dookoła Rudawy Janowickie"
 hints: |

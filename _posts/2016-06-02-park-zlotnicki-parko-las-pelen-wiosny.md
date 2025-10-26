@@ -11,7 +11,7 @@ featured_photo_url: "/assets/images/posts/2016/IMG_4379_featured.jpg"
 cover_photo_url: "/assets/images/posts/2016/IMG_4203-park_zlotnicki_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2016/IMG_4203-park_zlotnicki_mobile_cover.jpg"
 cover_alt: "park złotnicki - cover"
-distance: 0
+distance: "we Wrocławiu"
 likes: 7
 teaser: "dużo przestrzeni do treningu i zabawy | dwa średniowieczne grodziska | z dala od szumu miasta"
 hints: |

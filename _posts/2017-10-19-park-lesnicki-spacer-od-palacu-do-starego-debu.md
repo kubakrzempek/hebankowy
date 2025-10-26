@@ -11,7 +11,7 @@ featured_photo_url: "/assets/images/posts/2017/IMG_1695_featured.jpg"
 banner_photo_url: "/assets/images/posts/2017/IMG_1689_banner.jpg"
 cover_photo_url: "/assets/images/posts/2017/IMG_1689_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2017/IMG_1689_mobile_cover.jpg"
-distance: 0
+distance: "we Wrocławiu"
 likes: 3
 teaser: "pałac | pomniki przyrody | możliwość wyjścia w pola"
 hints: |

@@ -9,7 +9,7 @@ featured_photo_url: "/assets/images/posts/2016/IMG_3691_featured.jpg"
 cover_photo_url: "/assets/images/posts/2016/borowkowa_okladka-3691_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2016/borowkowa_okladka-3691_mobile_cover.jpg"
 cover_alt: "borówkowa góra okładka"
-distance: 110
+distance: "110 km od Wrocławia"
 likes: 22
 teaser: "wieża widokowa | pełna panorama szczytów Kotliny Kłodzkiej | łagodna trasa"
 hints: |

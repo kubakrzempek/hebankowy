@@ -11,7 +11,7 @@ featured_photo_url: "/assets/images/posts/2017/Dolina_Baryczy_lato-8_featured.jp
 banner_photo_url: "/assets/images/posts/2017/Dolina_Baryczy_lato-8_banner.jpg"
 cover_photo_url: "/assets/images/posts/2017/Dolina_Baryczy_lato-8_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2017/Dolina_Baryczy_lato-8_mobile_cover.jpg"
-distance: 50
+distance: "50 km od Wrocławia"
 likes: 12
 teaser: "bagnista rzeka Barycz | łąki pełne lata | trasa przez sosnowy las"
 hints: |

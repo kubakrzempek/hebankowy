@@ -10,7 +10,7 @@ featured_photo_url: "/assets/images/posts/2016/IMG_4513_featured.jpg"
 cover_photo_url: "/assets/images/posts/2016/IMG_4203-cover_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2016/IMG_4203-cover_mobile_cover.jpg"
 cover_alt: "wuwa - cover"
-distance: 0
+distance: "we Wrocławiu"
 likes: 6
 teaser: "morskie opowieści | perełki wrocławskiej architektury | przyjemne sąsiedztwo Parku Szczytnickiego "
 hints: |

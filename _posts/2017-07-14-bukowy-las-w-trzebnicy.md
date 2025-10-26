@@ -9,7 +9,7 @@ featured_photo_url: "/assets/images/posts/2017/Bukowy_las-2_featured.jpg"
 banner_photo_url: "/assets/images/posts/2017/Bukowy_las-2_banner.jpg"
 cover_photo_url: "/assets/images/posts/2017/Bukowy_las-2_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2017/Bukowy_las-2_mobile_cover.jpg"
-distance: 31
+distance: "31 km od Wrocławia"
 likes: 8
 teaser: "las-park | kręte ścieżki | spokojna okolica"
 hints: |

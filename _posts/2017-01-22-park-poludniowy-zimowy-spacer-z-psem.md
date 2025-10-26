@@ -11,7 +11,7 @@ featured_photo_url: "/assets/images/posts/2017/park_poludniowy-11_featured.jpg"
 banner_photo_url: "/assets/images/posts/2017/park_poludniowy-14_banner.jpg"
 cover_photo_url: "/assets/images/posts/2017/Park_Południowy_okładka_(14_of_1)_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2017/park_poludniowy-11_mobile_cover.jpg"
-distance: 0
+distance: "we Wrocławiu"
 likes: 5
 teaser: "szerokie polany | przytulne alejki | ptasi port"
 hints: |

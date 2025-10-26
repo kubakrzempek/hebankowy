@@ -11,7 +11,7 @@ featured_photo_url: "/assets/images/posts/2016/janska_góra-4_featured.jpg"
 cover_photo_url: "/assets/images/posts/2016/janska_góra-17_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2016/janska_góra-17_mobile_cover.jpg"
 cover_alt: "Janska gora cover"
-distance: 37
+distance: "37 km od Wrocławia"
 likes: 19
 teaser: "kamienna wieża widokowa | piękne krajobrazy | krótka i prosta trasa"
 hints: |

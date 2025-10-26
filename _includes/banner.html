@@ -13,15 +13,7 @@
       <h1 class="banner-tile-inner-header">{{ page.title }}</h1>
 
       <span class="banner-tile-inner-distance">
-        <em>
-          {% if page.distance > 30 %}
-            {{ page.distance }} km od Wrocławia
-          {% elsif page.distance > 20 %}
-            okolice Wrocławia
-          {% else %}
-            we Wrocławiu
-          {% endif %}
-        </em>
+        <em>{{ page.distance }}</em>
       </span>
 
       <div class="banner-tile-inner-socials">

@@ -11,7 +11,7 @@ featured_photo_url: "/assets/images/posts/2016/pawlowice_w_monopterze_featured.j
 cover_photo_url: "/assets/images/posts/2016/pawlowice_okladka_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2016/pawlowice_okladka_mobile_cover.jpg"
 cover_alt: "pawlowice okladka"
-distance: 0
+distance: "we Wrocławiu"
 likes: 15
 teaser: "świątynia dumania | największy dąb we Wrocławiu | pałac Kornów"
 hints: |

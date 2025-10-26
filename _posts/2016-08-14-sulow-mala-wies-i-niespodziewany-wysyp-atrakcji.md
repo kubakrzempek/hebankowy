@@ -9,7 +9,7 @@ featured_photo_url: "/assets/images/posts/2016/sulow_banerek_featured.jpg"
 cover_photo_url: "/assets/images/posts/2016/sulow_baner_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2016/IMG_4847_mobile_cover.jpg"
 cover_alt: "sulow baner"
-distance: 50
+distance: "50 km od Wrocławia"
 likes: 18
 teaser: "dwa pełne uroku kościoły  z muru pruskiego | wieś z placem rynkowym | zielona trasa spacerowa i stawy"
 hints: |

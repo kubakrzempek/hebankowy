@@ -6,9 +6,7 @@
         {{ post.date | date: "%d.%m.%Y" }}
       </div>
       <h2 class="post-tile-content-title">{{ post.title }}</h2>
-      {% if post.distance and post.distance > 0 %}
-        <p class="post-tile-content-distance">{{ post.distance }} km</p>
-      {% endif %}
+      <p class="post-tile-content-distance">{{ post.distance }}</p>
     </div>
   </article>
 </a>

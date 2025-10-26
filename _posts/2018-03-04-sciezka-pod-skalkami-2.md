@@ -9,7 +9,7 @@ featured_photo_url: "/assets/images/posts/2018/IMG_0335_featured.jpg"
 banner_photo_url: "/assets/images/posts/2018/IMG_0335_banner.jpg"
 cover_photo_url: "/assets/images/posts/2018/IMG_0335_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2018/IMG_0335-2_mobile_cover.jpg"
-distance: 40
+distance: "40 km od Wrocławia"
 likes: 22
 teaser: "nieoznaczony, dawny szlak wokół Ślęży | 3 źródełka i skały Władysława | mało uczęszczana trasa"
 hints: |

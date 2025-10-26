@@ -11,7 +11,7 @@ featured_photo_url: "/assets/images/posts/2016/Wielka_kopa_spacer_02_featured.jp
 cover_photo_url: "/assets/images/posts/2016/wielka_kopa_okladka_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2016/wielka_kopa_cover_(1_of_1)_mobile_cover.jpg"
 cover_alt: "wielka kopa - okladka"
-distance: 100
+distance: "100 km od Wrocławia"
 likes: 5
 teaser: "wokół Rudawy Janowickie | Kolorowe Jeziorka | łagodna trasa"
 hints: |

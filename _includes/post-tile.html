@@ -25,7 +25,7 @@
       </a>
     </h1>
     <p class="content-distance">
-      {% if post.distance and post.distance > 0 %}{{ post.distance }} km, {% endif %}<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B %Y" }}</time>
+      {{ post.distance }}, <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B %Y" }}</time>
     </p>
     {% if post.teaser %}
       <ul class="content-teaser">

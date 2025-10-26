@@ -11,7 +11,7 @@ featured_photo_url: "/assets/images/posts/2016/IMG_5044_featured.jpg"
 cover_photo_url: "/assets/images/posts/2016/Szymanow-cover_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2016/Szymanow-cover_mobile_cover.jpg"
 cover_alt: "szymanów - cover"
-distance: 25
+distance: "okolice Wrocławia"
 likes: 5
 teaser: "powietrzne piruety | Aeroklub Wrocławski | ścieżki wśród pól"
 hints: |

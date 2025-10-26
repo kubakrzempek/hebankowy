@@ -11,7 +11,7 @@ featured_photo_url: "/assets/images/posts/2017/cant_featured.jpg"
 banner_photo_url: "/assets/images/posts/2017/cant_banner.jpg"
 cover_photo_url: "/assets/images/posts/2017/cant_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2017/cant_mobile_cover.jpg"
-distance: 25
+distance: "okolice Wrocławia"
 likes: 4
 teaser: "park w Dolinie Bystrzycy | mały, klimatyczny rynek | dom handlowy w byłym kościele"
 hints: |

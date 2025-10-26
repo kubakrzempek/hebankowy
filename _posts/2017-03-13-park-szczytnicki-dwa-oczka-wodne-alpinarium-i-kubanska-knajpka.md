@@ -9,7 +9,7 @@ featured_photo_url: "/assets/images/posts/2017/IMG_7030-Edit_featured.jpg"
 banner_photo_url: "/assets/images/posts/2017/IMG_7030-Edit_banner.jpg"
 cover_photo_url: "/assets/images/posts/2017/Park_Szczytnicki_okładka_(14_of_1)_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2017/IMG_7030-Edit_mobile_cover.jpg"
-distance: 0
+distance: "we Wrocławiu"
 likes: 3
 teaser: "dwa oczka wodne | małe alpinarium | 3 duże polany"
 hints: |

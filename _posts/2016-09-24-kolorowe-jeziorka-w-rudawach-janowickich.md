@@ -11,7 +11,7 @@ featured_photo_url: "/assets/images/posts/2016/IMG_5709-Edit_featured.jpg"
 cover_photo_url: "/assets/images/posts/2016/jeziorka_okladka_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2016/jeziorka_okladka_mobile_cover.jpg"
 cover_alt: "kolorowe jeziorka - okładka"
-distance: 100
+distance: "100 km od Wrocławia"
 likes: 12
 teaser: "4 kolorowe jeziorka | wielobarwne skały | lasy i możliwość wyjścia w góry"
 hints: |

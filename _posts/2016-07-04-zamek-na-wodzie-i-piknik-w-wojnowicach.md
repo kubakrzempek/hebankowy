@@ -11,7 +11,7 @@ featured_photo_url: "/assets/images/posts/2016/IMG_4579-Edit_featured.jpg"
 cover_photo_url: "/assets/images/posts/2016/IMG_4579-Edit-2_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2016/IMG_4579-Edit-2_mobile_cover.jpg"
 cover_alt: "zamek na wodzie cover"
-distance: 26
+distance: "okolice Wrocławia"
 likes: 5
 teaser: "kameralny zamek | mały park otoczony lasem | znakomite miejsce by odetchnąć"
 hints: |

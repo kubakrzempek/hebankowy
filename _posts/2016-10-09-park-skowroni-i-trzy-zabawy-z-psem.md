@@ -11,7 +11,7 @@ featured_photo_url: "/assets/images/posts/2016/IMG_6126-7_featured.jpg"
 cover_photo_url: "/assets/images/posts/2016/park_skowroni_okladka_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2016/park_skowroni_z_psem_cover_0.2_(1_of_1)_mobile_cover.jpg"
 cover_alt: "park skowroni okladka"
-distance: 0
+distance: "we Wrocławiu"
 likes: 4
 teaser: "wiele psiaków | przyjemna, parkowa atmosfera | mała powierzchnia"
 hints: |

@@ -9,7 +9,7 @@ featured_photo_url: "/assets/images/posts/2018/IMG_3557_featured.jpg"
 banner_photo_url: "/assets/images/posts/2018/IMG_3557_banner.jpg"
 cover_photo_url: "/assets/images/posts/2018/IMG_3557_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2018/IMG_3557_mobile_cover.jpg"
-distance: 60
+distance: "60 km od Wrocławia"
 likes: 6
 teaser: "bardzo stary okaz dębu | pałac Maltzanów | romantyczne ścieżki nad wodą"
 hints: |

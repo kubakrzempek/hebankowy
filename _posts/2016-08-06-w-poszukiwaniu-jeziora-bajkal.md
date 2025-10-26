@@ -9,7 +9,7 @@ featured_photo_url: "/assets/images/posts/2016/IMG_5120_featured.jpg"
 cover_photo_url: "/assets/images/posts/2016/bajkal_okladka_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2016/bajkal_okladka_mobile_cover.jpg"
 cover_alt: "bajkał okładka1"
-distance: 25
+distance: "okolice Wrocławia"
 likes: 29
 teaser: "miejsce do zwodowania psa | miły spacer | wędrówka wzdłuż Odry"
 hints: |

@@ -12,7 +12,7 @@ banner_photo_url: "/assets/images/posts/2016/Uraz-27_banner.jpg"
 cover_photo_url: "/assets/images/posts/2016/Uraz-27_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2016/Uraz-27_mobile_cover.jpg"
 cover_alt: "uraz okladka"
-distance: 25
+distance: "okolice Wrocławia"
 likes: 17
 teaser: "meandrująca Odra | ruiny zamku | malowniczy zachód Słońca"
 hints: |

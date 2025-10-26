@@ -11,7 +11,7 @@ featured_photo_url: "/assets/images/posts/2016/IMG_5582-Edit_featured.jpg"
 cover_photo_url: "/assets/images/posts/2016/IMG_5582_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2016/IMG_5582_mobile_cover.jpg"
 cover_alt: "duza kladka psi park"
-distance: 0
+distance: "we Wrocławiu"
 likes: 7
 teaser: "8 przeszkód | miejsce niezobowiązujących ćwiczeń | mała przestrzeń"
 hints: |

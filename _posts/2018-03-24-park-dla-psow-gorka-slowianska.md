@@ -9,7 +9,7 @@ featured_photo_url: "/assets/images/posts/2018/IMG_2851_featured.jpg"
 banner_photo_url: "/assets/images/posts/2018/IMG_2851_banner.jpg"
 cover_photo_url: "/assets/images/posts/2018/IMG_2851_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2018/IMG_2851_mobile_cover.jpg"
-distance: 0
+distance: "we Wrocławiu"
 likes: 7
 teaser: "wydzielona przestrzeń dla psów | kilka rodzajów przeszkód | blisko centrum"
 hints: |

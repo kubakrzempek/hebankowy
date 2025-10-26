@@ -9,7 +9,7 @@ featured_photo_url: "/assets/images/posts/2016/IMG_4121_featured.jpg"
 cover_photo_url: "/assets/images/posts/2016/park_zachodni_okladka_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2016/park_zachodni_okladka_mobile_cover.jpg"
 cover_alt: "park zachodni okładka"
-distance: 0
+distance: "we Wrocławiu"
 likes: 3
 teaser: "część południowa parku | dawny cmentarz | ślady cmentarza dzisiaj"
 hints: |

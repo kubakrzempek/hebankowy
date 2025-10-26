@@ -11,7 +11,7 @@ featured_photo_url: "/assets/images/posts/2017/Zamek_Bolczów-1_featured.jpg"
 banner_photo_url: "/assets/images/posts/2017/Zamek_Bolczów-1_banner.jpg"
 cover_photo_url: "/assets/images/posts/2017/Zamek_Bolczów-1_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2017/Zamek_Bolczów-1_mobile_cover.jpg"
-distance: 100
+distance: "100 km od Wrocławia"
 likes: 19
 teaser: "zamek otoczony skałkami | możliwość wejścia do ruin | wokół góry Rudawy Janowickie"
 hints: |

@@ -11,7 +11,7 @@ featured_photo_url: "/assets/images/posts/2018/stary_ksiaz-12_featured.jpg"
 banner_photo_url: "/assets/images/posts/2018/stary_ksiaz-12_banner.jpg"
 cover_photo_url: "/assets/images/posts/2018/stary_ksiaz-12_cover.jpg"
 mobile_cover_photo_url: "/assets/images/posts/2018/stary_ksiaz-12_mobile_cover.jpg"
-distance: 70
+distance: "70 km od Wrocławia"
 likes: 18
 teaser: "romantyczne ruiny | ścieżka wśród skałek | rododendrony i muflony"
 hints: |
